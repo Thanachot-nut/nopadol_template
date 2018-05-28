@@ -1,0 +1,1521 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        margin: 0;
+        transition: background-color .5s;
+    }
+
+    .sidenav {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        z-index: 1;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: 0.5s;
+        padding-top: 60px;
+    }
+
+    .sidenav a {
+        padding: 8px 8px 8px 32px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+        transition: 0.3s;
+    }
+
+    .sidenav a:hover {
+        color: #f1f1f1;
+    }
+
+    .sidenav .closebtn {
+        position: absolute;
+        top: 0;
+        right: 25px;
+        font-size: 36px;
+        margin-left: 50px;
+    }
+
+    #main {
+        transition: margin-left .5s;
+        padding: 0;
+    }
+    /* content */
+
+    .sidenav2 {
+        height: 100%;
+        width: 100%;
+        top: 0;
+        left: 0;
+        overflow-x: hidden;
+        border-right: 1px solid #e5e5e5;
+        background-color: white !important;
+    }
+
+    .sidenav2 a {
+        padding: 6px 8px 6px 16px;
+        text-decoration: none;
+        font-size: 25px;
+        color: #818181;
+        display: block;
+    }
+
+    .sidenav2 a:hover {
+        color: #f1f1f1;
+    }
+
+    .main2 {
+        /* font-size: 28px; */
+        /* Increased text to enable scrolling */
+        width: 100%;
+    }
+    /* content */
+    /* <!-- navhead --> */
+
+    .topnav {
+        overflow: hidden;
+        background-color: #e9e9e9;
+        width: 100%;
+        border-bottom: 1px solid #e5e5e5;
+    }
+
+    .topnav a {
+        float: left;
+        display: inline-block;
+        /*  */
+        color: black;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .topnav a:hover {
+        background-color: #ddd;
+        color: black;
+    }
+
+    .topnav a.active {
+        background-color: #2196F3;
+        color: white;
+    }
+
+    .topnav .search-container {
+        float: center;
+    }
+
+    .topnav input[type=text] {
+        padding: 6px;
+        margin-top: 8px;
+        margin-bottom: 8px;
+        font-size: 17px;
+        border: none;
+        width: 50%;
+    }
+
+    .topnav .search-container button {
+        float: center;
+        padding: 6px 10px;
+        margin-top: 8px;
+        margin-right: 16px;
+        background: #ddd;
+        font-size: 17px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .topnav .search-container button:hover {
+        background: #ccc;
+    }
+    /* <!-- navhead --> */
+    /* <!-- navbody --> */
+
+    .topnav2 {
+        overflow: hidden;
+        background-color: white;
+        width: 100%;
+        border-bottom: 1px solid #e5e5e5;
+        margin-bottom: 8px;
+    }
+
+    .nav2 {
+        float: left;
+        display: block;
+        color: black;
+        text-align: center;
+        padding: 10px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+
+    .buttonbody {
+        border: 1px solid rgba(0, 0, 0, 0.1);
+        padding: 1px 31px;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .buttonbody .awesome {
+        color: gray;
+    }
+
+    .buttonbody:hover .awesome {
+        color: black;
+    }
+
+    .awesome {
+        color: gray;
+    }
+    /* <!-- navbody --> */
+    /* <!-- menuleft --> */
+
+    .menuleft:hover {
+        border-left: 4px solid #dd4b39;
+        background-color: #e9e9e9;
+    }
+
+    .menuinmain {
+        display: inline-block;
+        /* background-color: white; */
+        cursor: pointer;
+        border: 2px solid rgba(0, 0, 0, 0.1);
+        width: 260px;
+        background-color: #e9e9e9;
+    }
+
+    .hovermainmenu1 {
+        /* background-color:rgb(55, 55, 224) transparent; */
+        width: 100%;
+        position: relative;
+        height: 2px;
+        top: -1px;
+        z-index: 1;
+    }
+
+    .hovermainmenu2 {
+        /* background-color:rgb(55, 55, 224) transparent; */
+        width: 100%;
+        position: relative;
+        height: 2px;
+        top: -1px;
+        z-index: 1;
+    }
+
+    .hovermainmenu3 {
+        /* background-color:rgb(55, 55, 224) transparent; */
+        width: 100%;
+        position: relative;
+        height: 2px;
+        top: -1px;
+        z-index: 1;
+    }
+
+    .menuinmain:hover .awesome {
+        color: black;
+    }
+
+    .active {}
+
+    .menuinmain:hover .normalspan {
+        font-weight: bold;
+    }
+
+    .menuinmain:hover .hovermainmenu1 {
+        background-color: rgb(55, 55, 224);
+    }
+
+    .menuinmain:hover .hovermainmenu2 {
+        background-color: green;
+    }
+
+    .menuinmain:hover .hovermainmenu3 {
+        background-color: purple;
+    }
+
+    .normalspan {
+
+        font-size: 12.5px;
+        color: black;
+    }
+
+    .animationleft {
+        animation-name: moveinleft;
+        animation-duration: 1s;
+        cursor: pointer;
+    }
+
+    .menuleft:hover .animationleft {
+        color: red;
+    }
+
+    @keyframes moveinleft {
+        0% {
+            opacity: 0;
+            transform: translateX(-100px)
+        }
+        80% {
+            transform: translateX(20px)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0px)
+        }
+    }
+
+    .animationintop {
+        animation-name: moveintop;
+        animation-duration: 1s;
+    }
+
+    .animationintops {
+        animation-name: moveintop;
+        animation-duration: 1s;
+    }
+
+    @keyframes moveintop {
+        0% {
+            opacity: 0;
+            transform: translateY(-20px)
+        }
+        80% {
+            transform: translateY(4px)
+        }
+        100% {
+            opacity: 1;
+            transform: translate(0px)
+        }
+    }
+    /* <!-- menuleft --> */
+    /* inbox */
+
+    #inbox td {
+        border-bottom: 1px solid #ddd;
+        padding: 4px;
+    }
+    /* inbox */
+
+    /* hoverinbox */
+    
+    .hoverinbox{
+        background-color:rgb(221, 221, 221);
+    }
+    .hoverinbox:hover{
+        background-color:rgb(102, 102, 102);;
+        color:black;
+    }
+    /* hoverinbox */
+    </style>
+
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+</head>
+
+<body>
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Clients</a>
+        <a href="#">Contact</a>
+    </div>
+    <!--  push content to right -->
+    <div id="main">
+        <div class="container-fluid" style="margin: 0;padding:0; ">
+            <!-- navbar head -->
+            <div class="topnav" align="center">
+                <a class="d-md-none" style="display: hidden;"><span style="font-size:18px;cursor:pointer" onclick="openNav()">&#9776; </span></a>
+                <!-- <a class="active d-none d-md-block" href="#home">Home</a> -->
+                <!-- <a class="d-none d-md-block"><i class="fa fa-header" style="font-size:20px;"></i></a> -->
+                <!-- <a class="d-none d-md-block" href="#about">About</a>
+                <a class="d-none d-md-block" href="#contact">Contact</a> -->
+                <div class="search-container hidden-md-up" style="display:block;">
+                    <input type="text" placeholder="Search.." name="search">
+                    <button type="submit" style="margin-left:-4px;padding: 6px 40px;background-color: blue;"><i class="fa fa-search" style="color:white;"></i></button>
+                </div>
+                <!-- <a class="d-none d-md-block" href="#contact">Contact</a> -->
+                <!-- <span style="background-color: red;margin-left:30px; display:inline-block;width: 35px;">d</span> -->
+            </div>
+            <!-- navbar head -->
+            <!-- navbar body -->
+            <div class="topnav2">
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="nav2">
+                            <span style="color:blue;"></span>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="nav2">
+                            <button class="buttonbody" data-toggle="modal" data-target="#infolongmodal"><i class="fa fa-info-circle awesome"></i></button>
+                        </div>
+                        <div class="nav2">
+                            <button class="buttonbody" data-toggle="modal" data-target="#modaldelete"><i class="fa fa-trash awesome"></i></button>
+                            <button class="buttonbody" data-toggle="modal" data-target="#modalpage"><i class="fa fa-file awesome"></i></button>
+                            <button class="buttonbody" data-toggle="modal" data-target="#modalfolder"><i class="fa fa-folder awesome"></i></button>
+                        </div>
+                        <div class="nav2" style="white-space: nowrap;">
+                            <button class="buttonbody" data-toggle="modal" data-target="#dangerfolder"><i class="fa fa-exclamation-triangle awesome"></i></button>
+                            <button class="buttonbody"><span style="font-size:12.5px;">เพิ่มเติม</span></button>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="nav2">
+                            <button class="buttonbody"><i class="fa fa-chevron-left awesome"></i></button>
+                            <button class="buttonbody" style="margin-left:-4px;"><i class="fa fa-chevron-right awesome"></i></button>
+                            <button class="buttonbody"><i class="fa fa-cog awesome"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- navbar body -->
+            <!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <div>
+           
+        </div>
+            <a class="navbar-brand" href="#">Navbar</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                  <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#">Link</a>
+                </li>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    Dropdown
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Action</a>
+                    <a class="dropdown-item" href="#">Another action</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="#">Something else here</a>
+                  </div>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link disabled" href="#">Disabled</a>
+                </li>
+              </ul>
+              <form class="form-inline my-2 my-lg-0">
+                <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+              </form>
+            </div>
+          </nav> -->
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="sidenav2 d-none d-md-block">
+                        <div>
+                            <button style="margin-left:30px;margin-bottom:5px;cursor: pointer;border:1px solid transparent;background-color:#d14836;color:white;padding: 2px 40px;">เขียน</button>
+                        </div>
+                        <div class="menuleft" onclick="myinbox()">
+                            <a href="#services"><span  class="normalspan"><label class="animationleft" style="font-size: 18px;">กล่องจดหมาย</label></span></a>
+                        </div>
+                        <div class="menuleft">
+                            <a href="#services"><span  class="normalspan"><label class="animationleft">ติดดาว</label></span></a>
+                        </div>
+                        <div class="menuleft">
+                            <a href="#clients"><span class="normalspan "><label class="animationleft">สำคัญ</label></span></a>
+                        </div>
+                        <div class="menuleft">
+                            <a href="#contact"><span class="normalspan "><label class="animationleft">จดหมายส่งแล้ว</label></span></a>
+                        </div>
+                        <div class="menuleft">
+                            <a href="#contact"><span class="normalspan "><label class="animationleft">จดหมายร่าง</label></span></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-9">
+                    <div class="main2">
+                        <div class="col-md-12" style="margin-left: -15px;">
+                            <div class="menuinmain" onclick="myFunction()">
+                                <div class="hovermainmenu1"></div>
+                                <div class="animationintop" style="margin-left:15px;">
+                                    <i class="fa fa-inbox awesome" style="font-size: 20px;"></i> <span class="normalspan">หลัก</span>
+                                </div>
+                            </div>
+                            <div class="menuinmain" onclick="myFunction2()" style="margin-left: -7px;">
+                                <div class="hovermainmenu2"></div>
+                                <div class="animationintop" style="margin-left:15px;">
+                                    <i class="fa fa-users awesome" style="font-size: 20px;"></i><span class="normalspan" style="margin-left:8px;">โซเชียล</span>
+                                </div>
+                            </div>
+                            <div class="menuinmain" onclick="myFunction3()" style="margin-left: -7px;">
+                                <div class="hovermainmenu3"></div>
+                                <div class="animationintop" style="margin-left:15px;">
+                                    <i class="fa fa-map-pin awesome" style="font-size: 20px;"></i>
+                                    <span class="normalspan" style="margin-left:8px;">โปรโมชั่น</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-12"></div>
+
+                        <div id="myinbox" style="display: block;">
+                            <table id="inbox" style="box-sizing: border-box;padding: 0; text-overflow: ellipsis;" width="80%" class="animationintop">
+                               <tr style="cursor: pointer;" >
+                                    <td width="2%">
+                                     <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" onclick="seeinmail()"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%" onclick="seeinmail()"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%" onclick="seeinmail()"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%" onclick="seeinmail()"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" style="opacity:0.2;display:pointer"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" style="opacity:0.2;display:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td  width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="checkbox">
+                                    </td>
+                                    <td><i class="fa fa-star" onclick="bookmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td><i class="fa fa-map-pin" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td><span style="font-size:12px;">Firebase</span></td>
+                                    <td><span style="font-size:12px; color: black;"> Firebase Terms & Assigning a DPO for your projects <span style="color:#777">- Hi Thanachot, The EU General</span> </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td><span style="font-size:12px;">12:55</span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                            </table>
+                            <!-- <table class="table animationintop" style="padding: 0;">
+                                <thead>
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">ชื่อ</th>
+                                    <th scope="col">นามสกุล</th>
+                                    <th scope="col">ตำแหน่ง</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Kong</td>
+                                    <td>HR</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Power</td>
+                                    <td>Mong</td>
+                                    <td>HR</td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td>Larry</td>
+                                    <td>the Bird</td>
+                                    <td>Manager</td>
+                                  </tr>
+                                </tbody>
+                              </table> -->
+                        </div>
+                        <div id="myDIV" style="display: none;">
+                            <h3 style="padding-top: 12px;" class="animationintop" align="center">Home</h3>
+                            <table id="inbox" style="box-sizing: border-box;padding: 0; text-overflow: ellipsis;" width="80%" class="animationintop">
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                </tr>
+                                <tr>
+                                    <tr>
+                                        <td width="2%">
+                                            <input type="checkbox" style="cursor: pointer;">
+                                        </td>
+                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                        <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                        <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                            </span>
+                                        </td>
+                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                        <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                    </tr>
+                                    <tr>
+                                        <tr>
+                                            <td width="2%">
+                                                <input type="checkbox" style="cursor: pointer;">
+                                            </td>
+                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                            <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                            <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                </span>
+                                            </td>
+                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                            <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                        </tr>
+                                        <tr>
+                                            <tr>
+                                                <td width="2%">
+                                                    <input type="checkbox" style="cursor: pointer;">
+                                                </td>
+                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                    </span>
+                                                </td>
+                                                <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                <tr>
+                                                    <td width="2%">
+                                                        <input type="checkbox" style="cursor: pointer;">
+                                                    </td>
+                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                    <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                        </span>
+                                                    </td>
+                                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <tr>
+                                                        <td width="2%">
+                                                            <input type="checkbox" style="cursor: pointer;">
+                                                        </td>
+                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                        <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                            </span>
+                                                        </td>
+                                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                        <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <tr>
+                                                            <td width="2%">
+                                                                <input type="checkbox" style="cursor: pointer;">
+                                                            </td>
+                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                            <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                                </span>
+                                                            </td>
+                                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                            <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <tr>
+                                                                <td width="2%">
+                                                                    <input type="checkbox" style="cursor: pointer;">
+                                                                </td>
+                                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                                <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                                    </span>
+                                                                </td>
+                                                                <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <tr>
+                                                                    <td width="2%">
+                                                                        <input type="checkbox" style="cursor: pointer;">
+                                                                    </td>
+                                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                                    <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                    <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <tr>
+                                                                        <td width="2%">
+                                                                            <input type="checkbox" style="cursor: pointer;">
+                                                                        </td>
+                                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                                        <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                                            </span>
+                                                                        </td>
+                                                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                        <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <tr>
+                                                                            <td width="2%">
+                                                                                <input type="checkbox" style="cursor: pointer;">
+                                                                            </td>
+                                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>SCB</b></span></td>
+                                                                            <td width="72%"><span style="font-size:12px;"><b>SCB notification: Informing the result of opening deposit account and <span style="color:#777">เรียน นาย ...</span></b>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                            <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
+                                                                        </tr>
+                                                                        <tr>
+                            </table>
+                            <!-- <table class="table animationintop">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">เลข</th>
+                                        <th scope="col">ชื่อ</th>
+                                        <th scope="col">ที่อยู่</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">2</th>
+                                        <td>Power</td>
+                                        <td>Mong</td>
+                                        <td>113</td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">3</th>
+                                        <td>Larry</td>
+                                        <td>the Bird</td>
+                                        <td>111</td>
+                                    </tr>
+                                </tbody>
+                            </table> -->
+                        </div>
+                        <div id="myDIV2" style="display: none;">
+                            <h3 style="padding-top: 12px;" class="animationintop" align="center">Social</h3>
+                            <table id="inbox" style="box-sizing: border-box;padding: 0; text-overflow: ellipsis;" width="80%" class="animationintop">
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                </tr>
+                                <tr>
+                                    <tr>
+                                        <td width="2%">
+                                            <input type="checkbox" style="cursor: pointer;">
+                                        </td>
+                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                        <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                        <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                            </span>
+                                        </td>
+                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                        <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                    </tr>
+                                    <tr>
+                                        <tr>
+                                            <td width="2%">
+                                                <input type="checkbox" style="cursor: pointer;">
+                                            </td>
+                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                            <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                            <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                </span>
+                                            </td>
+                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                            <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                        </tr>
+                                        <tr>
+                                            <tr>
+                                                <td width="2%">
+                                                    <input type="checkbox" style="cursor: pointer;">
+                                                </td>
+                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                    </span>
+                                                </td>
+                                                <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                <tr>
+                                                    <td width="2%">
+                                                        <input type="checkbox" style="cursor: pointer;">
+                                                    </td>
+                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                    <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                        </span>
+                                                    </td>
+                                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                    <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <tr>
+                                                        <td width="2%">
+                                                            <input type="checkbox" style="cursor: pointer;">
+                                                        </td>
+                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                        <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                            </span>
+                                                        </td>
+                                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                        <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <tr>
+                                                            <td width="2%">
+                                                                <input type="checkbox" style="cursor: pointer;">
+                                                            </td>
+                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                            <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                </span>
+                                                            </td>
+                                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                            <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                            <tr>
+                                                                <td width="2%">
+                                                                    <input type="checkbox" style="cursor: pointer;">
+                                                                </td>
+                                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                    </span>
+                                                                </td>
+                                                                <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                <tr>
+                                                                    <td width="2%">
+                                                                        <input type="checkbox" style="cursor: pointer;">
+                                                                    </td>
+                                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                    <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                    <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                </tr>
+                                                                <tr>
+                                                                    <tr>
+                                                                        <td width="2%">
+                                                                            <input type="checkbox" style="cursor: pointer;">
+                                                                        </td>
+                                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                        <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                            </span>
+                                                                        </td>
+                                                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                        <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <tr>
+                                                                            <td width="2%">
+                                                                                <input type="checkbox" style="cursor: pointer;">
+                                                                            </td>
+                                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                            <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                </span>
+                                                                            </td>
+                                                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                            <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                        </tr>
+                                                                        <tr>
+                                                                            <tr>
+                                                                                <td width="2%">
+                                                                                    <input type="checkbox" style="cursor: pointer;">
+                                                                                </td>
+                                                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                    </span>
+                                                                                </td>
+                                                                                <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                            </tr>
+                                                                            <tr>
+                                                                                <tr>
+                                                                                    <td width="2%">
+                                                                                        <input type="checkbox" style="cursor: pointer;">
+                                                                                    </td>
+                                                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                    <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                        </span>
+                                                                                    </td>
+                                                                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                    <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                                </tr>
+                                                                                <tr>
+                                                                                    <tr>
+                                                                                        <td width="2%">
+                                                                                            <input type="checkbox" style="cursor: pointer;">
+                                                                                        </td>
+                                                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                        <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                            </span>
+                                                                                        </td>
+                                                                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                        <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                                    </tr>
+                                                                                    <tr>
+                                                                                        <tr>
+                                                                                            <td width="2%">
+                                                                                                <input type="checkbox" style="cursor: pointer;">
+                                                                                            </td>
+                                                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                            <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                                </span>
+                                                                                            </td>
+                                                                                            <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                            <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                                        </tr>
+                                                                                        <tr>
+                                                                                            <tr>
+                                                                                                <td width="2%">
+                                                                                                    <input type="checkbox" style="cursor: pointer;">
+                                                                                                </td>
+                                                                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                                <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                                <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                                    </span>
+                                                                                                </td>
+                                                                                                <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                                <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                                            </tr>
+                                                                                            <tr>
+                                                                                                <tr>
+                                                                                                    <td width="2%">
+                                                                                                        <input type="checkbox" style="cursor: pointer;">
+                                                                                                    </td>
+                                                                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                                    <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                                        </span>
+                                                                                                    </td>
+                                                                                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                                    <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                                                </tr>
+                                                                                                <tr>
+                                                                                                    <tr>
+                                                                                                        <td width="2%">
+                                                                                                            <input type="checkbox" style="cursor: pointer;">
+                                                                                                        </td>
+                                                                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>Packt</b></span></td>
+                                                                                                        <td width="72%"><span style="font-size:12px;"><b>It's Python Week - Get 50% off a Mapt Pro  Annual <span style="color:#777">- Get Mapt Pro Annual for just $150</span></b>
+                                                                                                            </span>
+                                                                                                        </td>
+                                                                                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                                                                                        <td width="5%"><span style="font-size:12px;"><b>0:00</b></span></td>
+                                                                                                    </tr>
+                                                                                                    <tr>
+                            </table>
+                        </div>
+                        <div id="myDIV3" style="display: none;">
+                            <h3 style="padding-top: 12px;" class="animationintop" align="center">Promotion</h3>
+                            <table id="inbox" style="box-sizing: border-box;padding: 0; text-overflow: ellipsis;" width="80%" class="animationintop">
+                                    <tr>
+                                            <td width="2%">
+                                                <input type="checkbox" style="cursor: pointer;">
+                                            </td>   
+                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                </span>
+                                            </td>
+                                            <td width="2%"><span style="font-size:12px;"></span></td>
+                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                        </tr>
+                                        <tr>
+                                                <td width="2%">
+                                                    <input type="checkbox" style="cursor: pointer;">
+                                                </td>   
+                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                    </span>
+                                                </td>
+                                                <td width="2%"><span style="font-size:12px;"></span></td>
+                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                            </tr>    
+                                <tr>
+                                        <td width="2%">
+                                            <input type="checkbox" style="cursor: pointer;">
+                                        </td>   
+                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                        <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                        <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                            </span>
+                                        </td>
+                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                        <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                    </tr>
+                                    <tr>
+                                            <td width="2%">
+                                                <input type="checkbox" style="cursor: pointer;">
+                                            </td>   
+                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                </span>
+                                            </td>
+                                            <td width="2%"><span style="font-size:12px;"></span></td>
+                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                        </tr>
+                                        <tr>
+                                                <td width="2%">
+                                                    <input type="checkbox" style="cursor: pointer;">
+                                                </td>   
+                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                    </span>
+                                                </td>
+                                                <td width="2%"><span style="font-size:12px;"></span></td>
+                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                            </tr>
+                                            <tr>
+                                                    <td width="2%">
+                                                        <input type="checkbox" style="cursor: pointer;">
+                                                    </td>   
+                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                        </span>
+                                                    </td>
+                                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                                </tr>
+                                                <tr>
+                                                        <td width="2%">
+                                                            <input type="checkbox" style="cursor: pointer;">
+                                                        </td>   
+                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                        <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                            </span>
+                                                        </td>
+                                                        <td width="2%"><span style="font-size:12px;"></span></td>
+                                                        <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                            <td width="2%">
+                                                                <input type="checkbox" style="cursor: pointer;">
+                                                            </td>   
+                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                                </span>
+                                                            </td>
+                                                            <td width="2%"><span style="font-size:12px;"></span></td>
+                                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                                        </tr>
+                                                        <tr>
+                                                                <td width="2%">
+                                                                    <input type="checkbox" style="cursor: pointer;">
+                                                                </td>   
+                                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                                    </span>
+                                                                </td>
+                                                                <td width="2%"><span style="font-size:12px;"></span></td>
+                                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                                            </tr>
+                                                            <tr>
+                                                                    <td width="2%">
+                                                                        <input type="checkbox" style="cursor: pointer;">
+                                                                    </td>   
+                                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                                        </span>
+                                                                    </td>
+                                                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                                                </tr>
+                                                                 <tr>
+                                            <td width="2%">
+                                                <input type="checkbox" style="cursor: pointer;">
+                                            </td>   
+                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                </span>
+                                            </td>
+                                            <td width="2%"><span style="font-size:12px;"></span></td>
+                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                        </tr>
+                                    <tr>
+                                            <td width="2%">
+                                                <input type="checkbox" style="cursor: pointer;">
+                                            </td>   
+                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                </span>
+                                            </td>
+                                            <td width="2%"><span style="font-size:12px;"></span></td>
+                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                        </tr>
+                                        <tr>
+                                                <td width="2%">
+                                                    <input type="checkbox" style="cursor: pointer;">
+                                                </td>   
+                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                                    </span>
+                                                </td>
+                                                <td width="2%"><span style="font-size:12px;"></span></td>
+                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                            </tr>
+                                    </table>
+                        </div>
+
+                        <div id="inmail" style="display: none;">
+                            <div style="background-color:transparent;padding-bottom:9px;width: 80%;margin:12px 1px 9px 1px;border-bottom: 1px solid #e5e5e5;">
+                                <table width="100%">
+                                    <tr>
+                                        <td width="85%">
+                                                <span style="font-size: 15px;">บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / Sign-on to Bualuang mBanking </span>
+                                        </td>
+                                        <td width="5%">
+                                                <i class="fa fa-map-pin awesome" style="font-size: 20px;"></i>
+                                        </td>
+                                        <td width="10%">
+                                            <div class="row">
+                                                <div class="hoverinbox" style="padding: 1px 7px;cursor: pointer;"> <span style="font-size: 10px;">กล่องจดหมาย</span></div><div class="hoverinbox" align="center" style="padding: 1px 3px;cursor: pointer;">x</div>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                   
+                                </table>
+                                
+                            </div>
+                            <div  style="word-break: break-word;width: 80%;border-bottom: 1px solid #e5e5e5;padding-bottom:100px;" >
+                            <span style="font-size: 12px" style="padding-top: 60px;word-break: break-word;padding-right:50px; ">
+                                    บริการแจ้งเตือน: การเข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง
+
+                                    ธนาคารขอเรียนให้ท่านทราบว่า มีการเข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง ล่าสุดเมื่อวันที่ 21 พฤษภาคม 2561 เวลา 18:43น.              
+                                    
+                                    อีเมลฉบับนี้ เป็นการแจ้งข้อมูลผ่านระบบอัตโนมัติ หากท่านไม่ได้ทำรายการตามรายละเอียดข้างต้น หรือ พบว่ามีข้อมูล หรือสิ่งผิดปกติใดๆ ที่ไม่ถูกต้องในรายการบัญชีเงินฝากของท่าน กรุณาติดต่อบัวหลวงโฟน โทร.1333 หรือ +66 (0) 2645 5555 ทันที 
+                                    
+                                    ขอแสดงความนับถือ
+                                    ธนาคารกรุงเทพ จำกัด (มหาชน) 
+                                    
+                                    หมายเหตุ: 
+                                    - อีเมลฉบับนี้เป็นการแจ้งข้อมูลโดยอัตโนมัติ กรุณาอย่าตอบกลับ หากต้องการสอบถามรายละเอียดเพิ่มเติม โปรดติดต่อบัวหลวงโฟน โทร. 1333 หรือ +66 (0) 2645 5555
+                                    - ธนาคารไม่มีนโยบายที่จะสอบถามรหัสลับแรกเข้า รหัสลับส่วนตัว หรือ Mobile PIN ของท่าน กรุณาเก็บรักษาข้อมูลส่วนตัวดังกล่าวของท่านไว้เป็นความลับ ท่านสามารถศึกษารายละเอียดเพิ่มเติมเกี่ยวกับความปลอดภัยในการใช้งานได้จากเว็บไซต์ของธนาคารกรุงเทพ 
+                                    
+                                    Email Notification:  Sign-on to Bualuang mBanking 
+                                    
+                                    Please be informed that you recently logged-in to Bualuang mBanking on 21 May 2018 at 18:43 (Thailand time). 
+                            </span>
+                        </div>
+                            </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--  push content to right -->
+    <div class="modal fade" id="infolongmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">แสดงข้อมูล</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptati Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptati Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptati
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modaldelete" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">ลบข้อมูล</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    กรุณาเลือก
+                    <h2 style="display: inline-block;"><b>5</b></h2> รายการ ที่ต้องการจะลบข้อมูล
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary">ลบ</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalpage" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Page</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptati
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalfolder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Folder</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptati
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="dangerfolder" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">danger</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    Some text to enable scrolling.. Lorem ipsum dolor sit amet, illum definitiones no quo, maluisset concludaturque et eum, altera fabulas ut quo. Atqui causae gloriatur ius te, id agam omnis evertitur eum. Affert laboramus repudiandae nec et. Inciderint efficiantur his ad. Eum no molestiae voluptati
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">ยกเลิก</button>
+                    <button type="button" class="btn btn-primary">ตกลง</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+    function bookmark(val) {
+
+        document.getElementById('starbookmark').style.opacity = "1";
+        document.getElementById('starbookmark').style.color = "yellow";
+
+
+    }
+
+    function pinmark() {
+        document.getElementById('pinmark').style.opacity = "1";
+        document.getElementById('pinmark').style.color = "yellow";
+    }
+
+    function myinbox() {
+        document.getElementById("myDIV2").style.display = "none";
+        document.getElementById("myDIV").style.display = "none";
+        document.getElementById("myinbox").style.display = "block";
+        document.getElementById("myDIV3").style.display = "none";
+        document.getElementById("inmail").style.display = "none";
+    }
+
+    function myFunction() {
+        // document.getElementById("promotion").style.display = "none";
+        document.getElementById("myDIV2").style.display = "none";
+        document.getElementById("myDIV3").style.display = "none";
+        document.getElementById("myinbox").style.display = "none";
+
+        document.getElementById("myDIV").style.display = "block";
+        document.getElementById("inmail").style.display = "none";
+    }
+
+    function myFunction2() {
+        document.getElementById("myDIV2").style.display = "block";
+        document.getElementById("myDIV").style.display = "none";
+        document.getElementById("myinbox").style.display = "none";
+        document.getElementById("myDIV3").style.display = "none";
+        document.getElementById("inmail").style.display = "none";
+    }
+
+    function myFunction3() {
+        document.getElementById("myDIV3").style.display = "block";
+        document.getElementById("myDIV2").style.display = "none";
+        document.getElementById("myinbox").style.display = "none";
+        document.getElementById("myDIV").style.display = "none";
+        document.getElementById("inmail").style.display = "none";
+
+    }
+
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+    }
+
+    function seeinmail(){
+      
+        document.getElementById("myDIV2").style.display = "none";
+        document.getElementById("myDIV").style.display = "none";
+        document.getElementById("myinbox").style.display = "none";
+        document.getElementById("myDIV3").style.display = "none";
+        document.getElementById("inmail").style.display = "block";
+     
+        alert('เข้าเมลล์')
+        
+    }
+    </script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>
