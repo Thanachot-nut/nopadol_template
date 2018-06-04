@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
         <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,6 +17,91 @@
         margin: 0;
         transition: background-color .5s;
     }
+        .header-right {
+            margin: 3px;
+            position: relative;
+            display: block;
+            float: right;
+            right: 3px;
+            word-break: break-all;
+            width: 250px;
+            height: 43px;
+            padding-top: 9px;
+            padding-left: 10px;
+            background-color: rgba(0,0,0,0.06);
+        }
+        .header-left {
+            float: left;
+            width: 190px;
+            position: relative;
+            height: 43px;
+            
+            margin-top: 4px;
+            margin-left: 5px;
+            margin-right: 46px;
+            background-color: rgba(0,0,0,0.06);
+            
+        }
+        
+        .containner-div{
+            top: 4px;
+            position: absolute;
+            width: 230px;
+            height: 35px;
+            background-color: transparent;
+        }
+        .iconmenu-header{
+            position: absolute;
+            width:100%;
+            height: 100%;
+            background: rgba(0,0,255);
+            font-size:29px;
+            color:white;
+            cursor: pointer;
+            
+        }
+        .C-icon{
+            background-color: transparent;
+            position: relative;
+            height: 100%;
+            width: 20%;
+            display: inline-block;
+            
+        }
+        .box-global{
+            position: absolute ; 
+            background: rgba(0,0,255);
+            width: 100%;
+            height: 100%;
+            padding-top: 4px;
+            font-size: 23px;
+            cursor: pointer;
+            color: white;
+            
+        }
+        .profile-login {
+            display:block;
+                background-image: url(https://lh3.googleusercontent.com/-e5eA2mnAIOc/AAAAAAAAAAI/AAAAAAAAAAA/AB6qoq3dV3hH-uOO6Q_1jFKTC1SEIf-hjA/s32-c-mo/photo.jpg);
+            position: absolute;
+            width: 36px;
+            left:4px;
+            bottom: 2px;
+            height: 30px;
+            border-radius: 200px;
+            cursor: pointer;
+        }
+        .numinnotification{
+            position: absolute;
+            background: red;
+            width: 17px;
+            top:3px;
+            left: 24px;
+            height: 15px;
+            font-size: 10px;
+            padding-right:15px;
+            padding-left: 4px;
+            white-space: nowrap;
+        }
 
     .sidenav {
         height: 100%;
@@ -229,7 +315,7 @@
         color: black;
     }
 
-    .active {}
+    
 
     .menuinmain:hover .normalspan {
         font-weight: bold;
@@ -581,18 +667,45 @@ div.float:hover{
     <div id="main">
         <div class="container-fluid" style="margin: 0;padding:0; ">
             <!-- navbar head -->
-            <div class="topnav" align="center">
+            <div class="topnav">
                 <a class="d-md-none" style="display: hidden;"><span style="font-size:18px;cursor:pointer" onclick="openNav()">&#9776; </span></a>
-                <!-- <a class="active d-none d-md-block" href="#home">Home</a> -->
-                <!-- <a class="d-none d-md-block"><i class="fa fa-header" style="font-size:20px;"></i></a> -->
-                <!-- <a class="d-none d-md-block" href="#about">About</a>
-                <a class="d-none d-md-block" href="#contact">Contact</a> -->
-                <div class="search-container hidden-md-up" style="display:block;">
+                
+                <div class="header-left" style="background: #0089cf;">
+                    <img src="http://www.nopadol.com/img/LOGO-WHITE-NOPADOL-59.png" style="width: 170px; height: 44px;color: blue;" alt="นพดลพานิช">
+                
+                </div>
+                <div class="search-container hidden-md-up" style="display:inline;float: center;">
                     <input type="text" placeholder="Search.." name="search">
                     <button type="submit" style="margin-left:-4px;padding: 6px 40px;background-color: blue;"><i class="fa fa-search" style="color:white;"></i></button>
                 </div>
-                <!-- <a class="d-none d-md-block" href="#contact">Contact</a> -->
-                <!-- <span style="background-color: red;margin-left:30px; display:inline-block;width: 35px;">d</span> -->
+                <div class="header-right">
+                    <div class="containner-div" align="center">
+                        <div class="C-icon">
+                            <div class="iconmenu-header">
+                            <i class="fab fa-elementor"></i>
+                                </div>
+                        </div>
+                        
+                        <div class="C-icon">
+                            <div class="box-global">
+              <i class="fas fa-globe"></i>
+              <div class="numinnotification">
+               13
+          </div>
+                </div>
+                        </div>
+                        <div class="C-icon" >
+                            <div class="box-global" >
+                                
+
+                                <div class="profile-login">
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+               
             </div>
             <!-- navbar head -->
             <!-- navbar body -->
