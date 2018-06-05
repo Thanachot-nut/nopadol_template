@@ -3,7 +3,7 @@
 
 <head>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <style>
@@ -17,91 +17,284 @@
         margin: 0;
         transition: background-color .5s;
     }
-        .header-right {
-            margin: 3px;
-            position: relative;
-            display: block;
-            float: right;
-            right: 3px;
-            word-break: break-all;
-            width: 250px;
-            height: 43px;
-            padding-top: 9px;
-            padding-left: 10px;
-            background-color: rgba(0,0,0,0.06);
-        }
-        .header-left {
-            float: left;
-            width: 190px;
-            position: relative;
-            height: 43px;
-            
-            margin-top: 4px;
-            margin-left: 5px;
-            margin-right: 46px;
-            background-color: rgba(0,0,0,0.06);
-            
-        }
-        
-        .containner-div{
-            top: 4px;
-            position: absolute;
-            width: 230px;
-            height: 35px;
-            background-color: transparent;
-        }
-        .iconmenu-header{
-            position: absolute;
-            width:100%;
-            height: 100%;
-            background: rgba(0,0,255);
-            font-size:29px;
-            color:white;
-            cursor: pointer;
-            
-        }
-        .C-icon{
-            background-color: transparent;
-            position: relative;
-            height: 100%;
-            width: 20%;
-            display: inline-block;
-            
-        }
-        .box-global{
-            position: absolute ; 
-            background: rgba(0,0,255);
-            width: 100%;
-            height: 100%;
-            padding-top: 4px;
-            font-size: 23px;
-            cursor: pointer;
-            color: white;
-            
-        }
-        .profile-login {
-            display:block;
-                background-image: url(https://lh3.googleusercontent.com/-e5eA2mnAIOc/AAAAAAAAAAI/AAAAAAAAAAA/AB6qoq3dV3hH-uOO6Q_1jFKTC1SEIf-hjA/s32-c-mo/photo.jpg);
-            position: absolute;
-            width: 36px;
-            left:4px;
-            bottom: 2px;
-            height: 30px;
-            border-radius: 200px;
-            cursor: pointer;
-        }
-        .numinnotification{
-            position: absolute;
-            background: red;
-            width: 17px;
-            top:3px;
-            left: 24px;
-            height: 15px;
-            font-size: 10px;
-            padding-right:15px;
-            padding-left: 4px;
-            white-space: nowrap;
-        }
+
+    .header-right {
+
+        white-space: nowrap;
+        margin: 3px;
+        position: absolute;
+        display: inline-block;
+        float: right;
+        right: 4px;
+        word-break: break-all;
+        width: 230px;
+        height: 45px;
+        padding-top: 13px;
+        z-index: 33;
+        background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .header-left {
+        float: left;
+        width: 190px;
+        position: relative;
+        height: 43px;
+
+        margin-top: 4px;
+        margin-left: 5px;
+        margin-right: 46px;
+        background-color: rgba(0, 0, 0, 0.06);
+    }
+
+    .containner-div {
+        top: 4px;
+        position: absolute;
+        width: 230px;
+        height: 35px;
+        background-color: transparent;
+    }
+
+    .iconmenu-header {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 255);
+        font-size: 29px;
+        color: white;
+        cursor: pointer;
+    }
+
+    .detail-iconmenu {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-color: rgba(0, 0, 0, .2);
+        color: #000;
+        -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        display: block;
+        outline: none;
+        position: absolute;
+        right: 47px;
+        top: 52px;
+        -webkit-border-radius: 2px;
+        border-radius: 2px;
+        min-height: 350px;
+        overflow-y: auto;
+        width: 350px;
+        z-index: 2;
+        overflow-x: hidden;
+    }
+
+    .detail-iconmenu2 {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-color: rgba(0, 0, 0, .2);
+        color: #000;
+        -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 52px;
+        border-radius: 2px;
+        min-height: 230px;
+        overflow-y: auto;
+        width: 420px;
+        z-index: 2;
+        overflow-x: hidden;
+    }
+
+    .moom {
+        border-color: transparent;
+        border-bottom-color: rgba(0, 0, 0, 0.25);
+        border-style: dashed dashed solid;
+        border-width: 0 8.5px 8.5px;
+        display: block;
+        position: absolute;
+        left: 55.5px;
+        top: 43px;
+        z-index: 3;
+        height: 0;
+        width: 0;
+    }
+
+    .moom2 {
+        border-color: transparent;
+        border-bottom-color: rgba(0, 0, 0, 0.25);
+        border-style: dashed dashed solid;
+        border-width: 0 8.5px 8.5px;
+        display: block;
+        position: absolute;
+        left: 105.5px;
+        top: 43px;
+        z-index: 3;
+        height: 0;
+        width: 0;
+    }
+
+    .moom3 {
+        border-color: transparent;
+        border-bottom-color: rgba(0, 0, 0, 0.25);
+        border-style: dashed dashed solid;
+        border-width: 0 8.5px 8.5px;
+        display: block;
+        position: absolute;
+        left: 156.5px;
+        top: 43px;
+        z-index: 3;
+        height: 0;
+        width: 0;
+    }
+
+    .contain-menu {
+     background: rgba(0,0,0,0.1);
+        position: absolute;
+
+        top: 15px;
+        left: 15px;
+        bottom: 15px;
+        height: 100%;
+        width: 95%;
+        word-break: break-all;
+    }
+
+    .menumore {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.25);
+        height: 98px;
+        width: 86px;
+        padding: 1px;
+        margin-left: 14px;
+        margin-bottom: 5px;
+    }
+
+    .menu2-more {
+        cursor: pointer;
+        position: relative;
+        display: inline-block;
+        background: rgba(0, 0, 0, 0.25);
+        height: 98px;
+        width: 385px;
+        padding: 1px;
+        margin-left: 14px;
+        margin-bottom: 5px;
+    }
+
+    .img-menumore {
+        display: inline-block;
+        vertical-align: top;
+        height: 60px;
+        width: 64px;
+        color: white;
+        font-size: 50px
+    }
+
+    .leftbody {
+        display: inline-block;
+        position: absolute;
+        left: 13px;
+        top: 13px;
+        background: blue;
+        width: 70px;
+        height: 75px;
+    }
+
+    .rightbody {
+        display: inline-block;
+        position: absolute;
+        width: 290px;
+        height: 74px;
+        top: 13px;
+        left: 84px;
+        background-color: rgba(0, 0, 0, 0.26);
+        font-size: 15px;
+        padding-top: 4px;
+        padding-left: 12px;
+        word-break: break-all;
+        color: white;
+    }
+
+    .C-icon {
+        background-color: transparent;
+        position: relative;
+        height: 100%;
+        width: 20%;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .box-global {
+        position: absolute;
+        background: rgba(0, 0, 255);
+        width: 100%;
+        height: 100%;
+        padding-top: 4px;
+        font-size: 23px;
+        cursor: pointer;
+        color: white;
+    }
+
+    .profile-login {
+        display: block;
+        background-image: url(https://lh3.googleusercontent.com/-e5eA2mnAIOc/AAAAAAAAAAI/AAAAAAAAAAA/AB6qoq3dV3hH-uOO6Q_1jFKTC1SEIf-hjA/s32-c-mo/photo.jpg);
+        position: absolute;
+        width: 36px;
+        left: 4px;
+        bottom: 2px;
+        height: 30px;
+        border-radius: 200px;
+        cursor: pointer;
+    }
+
+    .detailmenu3 {
+        background-color: white;
+        border: 1px solid #ccc;
+        border-color: rgba(0, 0, 0, .2);
+        color: #000;
+        -webkit-box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        box-shadow: 0 2px 10px rgba(0, 0, 0, .2);
+        display: block;
+        position: absolute;
+        right: 5px;
+        top: 52px;
+        border-radius: 2px;
+        min-height: 190px;
+        overflow-y: auto;
+        width: 420px;
+        z-index: 2;
+        overflow-x: hidden;
+    }
+
+    .profilemenu3 {
+        margin: 20px;
+    }
+
+    .containimg {
+        position: relative;
+        background: none;
+        margin-right: 20px;
+        display: inline-block;
+    }
+
+    .contentprofile {
+        display: inline-block;
+    }
+
+
+    .numinnotification {
+        position: absolute;
+        background: red;
+        width: 17px;
+        top: 3px;
+        left: 24px;
+        height: 15px;
+        font-size: 10px;
+        padding-right: 15px;
+        padding-left: 4px;
+        white-space: nowrap;
+    }
 
     .sidenav {
         height: 100%;
@@ -134,7 +327,7 @@
         top: 0;
         right: 25px;
         font-size: 36px;
-        margin-left: 50px;
+        margin-right: 50px;
     }
 
     #main {
@@ -287,27 +480,30 @@
     .hovermainmenu1 {
         /* background-color:rgb(55, 55, 224) transparent; */
         width: 100%;
-        position: relative;
+        position: absolute;
         height: 2px;
         top: -1px;
+        left: 0;
         z-index: 1;
     }
 
     .hovermainmenu2 {
         /* background-color:rgb(55, 55, 224) transparent; */
         width: 100%;
-        position: relative;
+        position: absolute;
         height: 2px;
         top: -1px;
+        left: 0;
         z-index: 1;
     }
 
     .hovermainmenu3 {
         /* background-color:rgb(55, 55, 224) transparent; */
         width: 100%;
-        position: relative;
+        position: absolute;
         height: 2px;
         top: -1px;
+        left: 0;
         z-index: 1;
     }
 
@@ -315,7 +511,7 @@
         color: black;
     }
 
-    
+
 
     .menuinmain:hover .normalspan {
         font-weight: bold;
@@ -394,128 +590,184 @@
         padding: 4px;
     }
     /* inbox */
-
-    /* hoverinbox */
-    
-    .hoverinbox{
-        background-color:rgb(221, 221, 221);
-    }
-    .hoverinbox:hover{
-        background-color:rgb(102, 102, 102);;
-        color:black;
-    }
     /* hoverinbox */
 
+    .hoverinbox {
+        background-color: rgb(221, 221, 221);
+    }
+
+    .hoverinbox:hover {
+        background-color: rgb(102, 102, 102);
+        ;
+        color: black;
+    }
+    /* hoverinbox */
     /* float button */
+
     .float {
-	position:fixed;
-	width:60px;
-	height:60px;
-	bottom:40px;
-	right:40px;
-	background-color:#0C9;
-	color:#FFF;
-	border-radius:50px;
-	text-align:center;
-	box-shadow: 2px 2px 3px #999;
-    z-index: 3;
-}
-
-.my-float{
-	margin-top:22px;
-}
-/* float button */
-div.float:hover{
-    cursor: pointer;
-}
-/* float button */
-    
-  /* writeinbox */
-.writeinbox {
-    position: fixed;
-    width:500px;
-	height:450px;
-	bottom:0px;
-	right:10px;
-    background: white;
-    border:1px grey solid;
-    display: none;
-    z-index: 4;
-}
-  /* writeinbox */
-
-  /* box for writeinbox */
-.fontawesome:hover{
-    background-color: #737373;
-    opacity: 1;
-    cursor: pointer;
-}
-.textarea{
-    text-align: left;
-    height: 20px!important;
-    overflow: hidden;
-    padding: 6px 3px;
-    resize: none;
-    
-    width: 80px;
-    color: black;
-    background-color: white;
-    border-bottom:none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    outline: none;
-    word-wrap: break-word;
-}
-.buttonsubmit{
-    padding: 0px 8px;
-    border-radius: 2px;
-    cursor: default;
-    font-size: 14px;
-    font-weight: bold;
-    text-align: center;
-    white-space: nowrap;
-    border: 1px solid #3079ed;
-    color: #fff;
-    height: 27px;
-    line-height: 27px;
-    min-width: 54px;
-    outline: 0;
-    background-color: #4d90fe; 
-    background-image: -webkit-linear-gradient(top,#4d90fe,#4787ed);
-}
-.anima-floatbutton {
-    animation: degree 2s;
-}
-@keyframes degree {
-    0%{
-        opacity: 0;
-        /* transform: scale(1.42); */
-        transform: rotate(0deg);
+        position: fixed;
+        width: 60px;
+        height: 60px;
+        bottom: 40px;
+        right: 40px;
+        background-color: #0C9;
+        color: #FFF;
+        border-radius: 50px;
+        text-align: center;
+        box-shadow: 2px 2px 3px #999;
+        z-index: 3;
     }
-    50%{
-        transform: rotate(360deg);
-    }
-   
-    100%{
-        opacity:1;
-        /* transform: scale(0); */
-        transform: rotate(360deg);
-    }
-}
 
-.writeinboxhide {
-    position: fixed;
-    width:260px;
-	height:36px;
-	bottom:0px;
-	right:30px;
-    background: #404040;
-    border:1px grey solid;
-    display: none;
-    z-index: 4;
-}
-  /* box for writeinbox */
+    .my-float {
+        margin-top: 22px;
+    }
+    /* float button */
+
+    div.float:hover {
+        cursor: pointer;
+    }
+    /* float button */
+    /* writeinbox */
+
+    .writeinbox {
+        position: fixed;
+        width: 500px;
+        height: 450px;
+        bottom: 0px;
+        right: 10px;
+        background: white;
+        border: 1px grey solid;
+        display: none;
+        z-index: 4;
+    }
+    /* writeinbox */
+    /* box for writeinbox */
+
+    .fontawesome:hover {
+        background-color: #737373;
+        opacity: 1;
+        cursor: pointer;
+    }
+
+    .textarea {
+        text-align: left;
+        height: 20px!important;
+        overflow: hidden;
+        padding: 6px 3px;
+        resize: none;
+
+        width: 80px;
+        color: black;
+        background-color: white;
+        border-bottom: none;
+        border-top: none;
+        border-left: none;
+        border-right: none;
+        outline: none;
+        word-wrap: break-word;
+    }
+
+    .buttonsubmit {
+        padding: 0px 8px;
+        border-radius: 2px;
+        cursor: default;
+        font-size: 14px;
+        font-weight: bold;
+        text-align: center;
+        white-space: nowrap;
+        border: 1px solid #3079ed;
+        color: #fff;
+        height: 27px;
+        line-height: 27px;
+        min-width: 54px;
+        outline: 0;
+        background-color: #4d90fe;
+        background-image: -webkit-linear-gradient(top, #4d90fe, #4787ed);
+    }
+
+    .anima-floatbutton {
+        animation: degree 2s;
+    }
+
+    @keyframes degree {
+        0% {
+            opacity: 0;
+            /* transform: scale(1.42); */
+            transform: rotate(0deg);
+        }
+        50% {
+            transform: rotate(360deg);
+        }
+
+        100% {
+            opacity: 1;
+            /* transform: scale(0); */
+            transform: rotate(360deg);
+        }
+    }
+
+    .writeinboxhide {
+        position: fixed;
+        width: 260px;
+        height: 36px;
+        bottom: 0px;
+        right: 30px;
+        background: #404040;
+        border: 1px grey solid;
+        display: none;
+        z-index: 4;
+    }
+    /* box for writeinbox */
+        
+        .animation1-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: .2s;
+        }
+        .animation2-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: .4s;
+        }
+        .animation3-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: .6s;
+        }
+        .animation4-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: .8s;
+        }
+        .animation5-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: 1s;
+        }
+        .animation6-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: 1.2s;
+        }
+        .animation7-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: 1.4s;
+        }
+        .animation8-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: 1.6s;
+        }
+        .animation9-button-dura{
+            animation: righttoleftshort 1.55s;
+            animation-delay: 1.8s;
+        }
+        @keyframes righttoleftshort{
+            0%{
+                opacity: 0;
+                transform: translateX(-30px)
+            }
+            50%{
+                 transform: translateX(5px)
+            }
+            100%{
+                opacity: 1;
+                transform: translateX(0px)
+            }
+        }
     </style>
 
     <head>
@@ -527,133 +779,112 @@ div.float:hover{
 <body>
     <!-- writeinbox -->
     <div class="writeinboxhide" id="writeinboxhide">
-            <table width="100%" height="100%">
-                    <tr>
-                        <td width="70%" height="100%"  onclick="showelement()">
-                            <span style="color:white;font-size: 13px; padding-left: 11px;padding-top: 9px;" >
+        <table width="100%" height="100%">
+            <tr>
+                <td width="70%" height="100%" onclick="showelement()">
+                    <span style="color:white;font-size: 13px; padding-left: 11px;padding-top: 9px;">
                                 ข้อความใหม่ 
                             </span>
-                        </td>
-                            <td align="center" width="10%" height="100%" class="fontawesome"  onclick="showelement()"  style="color:white; padding-left:2px;">
-                                    <i class="fa fa-window-minimize fontawesome" style="opacity:0.6;font-size: 12px;"></i>
-                                    
-                            </td>
-                            <td align="center" width="10%" height="100%" class="fontawesome" style="color:white; padding-left:2px;">
-                                    <i class="fa fa-chevron-down fontawesome" style="opacity:0.6;font-size: 12px;"></i>
-                            </td>
-                            <td align="center" width="10%" height="100%" class="fontawesome" onclick="closewriteinboxhide()" style="color:white; padding-left:2px;">
-                                    <i class="fa fa-times fontawesome" style="opacity:0.6;font-size: 12px;"></i>
-                            </td>
-                    </tr>
-                    
-
-                </table>
+                </td>
+                <td align="center" width="10%" height="100%" class="fontawesome" onclick="showelement()" style="color:white; padding-left:2px;">
+                    <i class="fa fa-window-minimize fontawesome" style="opacity:0.6;font-size: 12px;"></i>
+                </td>
+                <td align="center" width="10%" height="100%" class="fontawesome" style="color:white; padding-left:2px;">
+                    <i class="fa fa-chevron-down fontawesome" style="opacity:0.6;font-size: 12px;"></i>
+                </td>
+                <td align="center" width="10%" height="100%" class="fontawesome" onclick="closewriteinboxhide()" style="color:white; padding-left:2px;">
+                    <i class="fa fa-times fontawesome" style="opacity:0.6;font-size: 12px;"></i>
+                </td>
+            </tr>
+        </table>
     </div>
-
-    <div class="writeinbox" id="closemenuw" >
+    <div class="writeinbox" id="closemenuw">
         <div style="width:100%;height:35px;">
-            
-        <div style="width:100%;height:40px;background: #404040;" > 
-            <div style="padding-top:10px;padding-left: 20px;">
-                <table width="100%" height="100%">
-                    <tr>
-                        <td width="76%" height="100%" onclick="hideelement()">
-                            <span style="color:white;font-size: 15px;">
-                                ข้อความใหม่ 
-                            </span>
-                        </td>
-                            <td align="center" width="5%" height="100%" class="fontawesome" onclick="hideelement()"  style="color:white; padding-left:2px;">
-                                    <i class="fa fa-window-minimize fontawesome" style="opacity:0.6;font-size: 12px;"></i>
-                                    
-                            </td>
-                            <td align="center" width="5%" height="100%" class="fontawesome" style="color:white; padding-left:2px;">
-                                    <i class="fa fa-chevron-down fontawesome" style="opacity:0.6;font-size: 12px;"></i>
-                            </td>
-                            <td onclick="cancel()" align="center" width="5%" height="100%" class="fontawesome" style="color:white; padding-left:2px;">
-                                    <i class="fa fa-times fontawesome" style="opacity:0.6;font-size: 12px;"></i>
-                            </td>
-                    </tr>
-                    
-
-                </table>
-                
-                <!--  -->
-
-            </div>
-            
-           
-        </div>
-           
-        <div style="width:100%;height:40px;background: white;border:1px solid #cfcfcf;">
+            <div style="width:100%;height:40px;background: #404040;">
                 <div style="padding-top:10px;padding-left: 20px;">
                     <table width="100%" height="100%">
                         <tr>
-                        <td width="5%" height="100%" align="left">
-                                       <span style="color:#cfcfcf;font-size:15px; ">ถึง</span>
-                                    </td>
-                            <td width="95%" height="100%">
-                                <textarea rows="1" id="mail_to" class="textarea" name="to"  aria-label="ถึง" role="combobox" aria-autocomplete="list" style="width: 100%;height:30px;font-family: arial,sans-serif;"></textarea>
+                            <td width="76%" height="100%" onclick="hideelement()">
+                                <span style="color:white;font-size: 15px;">
+                                ข้อความใหม่ 
+                            </span>
+                            </td>
+                            <td align="center" width="5%" height="100%" class="fontawesome" onclick="hideelement()" style="color:white; padding-left:2px;">
+                                <i class="fa fa-window-minimize fontawesome" style="opacity:0.6;font-size: 12px;"></i>
+                            </td>
+                            <td align="center" width="5%" height="100%" class="fontawesome" style="color:white; padding-left:2px;">
+                                <i class="fa fa-chevron-down fontawesome" style="opacity:0.6;font-size: 12px;"></i>
+                            </td>
+                            <td onclick="cancel()" align="center" width="5%" height="100%" class="fontawesome" style="color:white; padding-left:2px;">
+                                <i class="fa fa-times fontawesome" style="opacity:0.6;font-size: 12px;"></i>
                             </td>
                         </tr>
                     </table>
-                </div>  
-            </div>
-
-            <div style="width:100%;height:40px;background: white;border:1px solid #cfcfcf;">
-                    <div style="padding-top:10px;padding-left: 13px;">
-                        <table width="100%" height="100%">
-                            <tr>
-                            <td width="3%" height="100%" align="left">
-                                           <span style="color:#cfcfcf;font-size:15px; ">เรื่อง</span>
-                                        </td>
-                                <td width="97%" height="100%" >
-                                    <textarea rows="1" id="mail_subject"  class="textarea" name="to"  aria-label="ถึง" role="combobox" aria-autocomplete="list" style="width: 100%;height:30px;font-family: arial,sans-serif;"></textarea>
-                                </td>
-                            </tr>
-                        </table>
-                    </div>  
+                    <!--  -->
                 </div>
-
-
-                <div style="width:100%;position: relative;background: white;min-height: 285px;">
-                        <div style="padding-top:10px;padding-left: 13px;">
-                            <table width="100%" height="100%">
-                                <tr>
-                                    <td width="100%" height="100%" >
-                                            <textarea class="textarea" id="mail_detail" hidefocus="true" aria-label="ตัวข้อความ"  role="textbox" aria-multiline="true" contenteditable="true" tabindex="1" style="direction: ltr; min-height: 250px; min-width: 460px;font-family: arial,sans-serif;"></textarea>
-                                    </td>
-                                </tr>
-                            </table>
-                        </div>  
-                    </div>
-
-                    <div style="width:100%;height:44px;background-color: #f5f5f5;border:1px solid #cfcfcf;position: relative;">
-                            <div style="padding-top:10px;padding-left: 8px;">
-                                <table style="font-family: arial,sans-serif; width: 100%;">
-                            <tr>
-                                <td width="13%">
-                                    <div class="buttonsubmit" onclick="mail_submail()" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">ส่ง</div>
-                                </td>
-                                <td width="2%">
-                                    <div style="border-right: 1px solid #cfcfcf;
+            </div>
+            <div style="width:100%;height:40px;background: white;border:1px solid #cfcfcf;">
+                <div style="padding-top:10px;padding-left: 20px;">
+                    <table width="100%" height="100%">
+                        <tr>
+                            <td width="5%" height="100%" align="left">
+                                <span style="color:#cfcfcf;font-size:15px; ">ถึง</span>
+                            </td>
+                            <td width="95%" height="100%">
+                                <textarea rows="1" id="mail_to" class="textarea" name="to" aria-label="ถึง" role="combobox" aria-autocomplete="list" style="width: 100%;height:30px;font-family: arial,sans-serif;"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="width:100%;height:40px;background: white;border:1px solid #cfcfcf;">
+                <div style="padding-top:10px;padding-left: 13px;">
+                    <table width="100%" height="100%">
+                        <tr>
+                            <td width="3%" height="100%" align="left">
+                                <span style="color:#cfcfcf;font-size:15px; ">เรื่อง</span>
+                            </td>
+                            <td width="97%" height="100%">
+                                <textarea rows="1" id="mail_subject" class="textarea" name="to" aria-label="ถึง" role="combobox" aria-autocomplete="list" style="width: 100%;height:30px;font-family: arial,sans-serif;"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="width:100%;position: relative;background: white;min-height: 285px;">
+                <div style="padding-top:10px;padding-left: 13px;">
+                    <table width="100%" height="100%">
+                        <tr>
+                            <td width="100%" height="100%">
+                                <textarea class="textarea" id="mail_detail" hidefocus="true" aria-label="ตัวข้อความ" role="textbox" aria-multiline="true" contenteditable="true" tabindex="1" style="direction: ltr; min-height: 250px; min-width: 460px;font-family: arial,sans-serif;"></textarea>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <div style="width:100%;height:44px;background-color: #f5f5f5;border:1px solid #cfcfcf;position: relative;">
+                <div style="padding-top:10px;padding-left: 8px;">
+                    <table style="font-family: arial,sans-serif; width: 100%;">
+                        <tr>
+                            <td width="13%">
+                                <div class="buttonsubmit" onclick="mail_submail()" style="cursor: pointer;" data-toggle="modal" data-target="#exampleModal">ส่ง</div>
+                            </td>
+                            <td width="2%">
+                                <div style="border-right: 1px solid #cfcfcf;
                                     height: 25px;"></div>
-                                </td>
-                                <td width="85%">
-                                       
-                                    </td>
-                            </tr>
-                                </table>
-                            </div>  
-                        </div>
-                   
+                            </td>
+                            <td width="85%">
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
         </div>
-
     </div>
-
     <!-- writeinbox -->
     <!-- float button-->
-    <div href="#" class="float" onclick="callwrite()" >
-            <i class="fa fa-plus my-float anima-floatbutton" ></i>
+    <div href="#" class="float" onclick="callwrite()">
+        <i class="fa fa-plus my-float anima-floatbutton"></i>
     </div>
     <!-- float button -->
     <div id="mySidenav" class="sidenav">
@@ -669,72 +900,239 @@ div.float:hover{
             <!-- navbar head -->
             <div class="topnav">
                 <a class="d-md-none" style="display: hidden;"><span style="font-size:18px;cursor:pointer" onclick="openNav()">&#9776; </span></a>
-                
-                <div class="header-left" style="background: #0089cf;">
-                    <img src="http://www.nopadol.com/img/LOGO-WHITE-NOPADOL-59.png" style="width: 170px; height: 44px;color: blue;" alt="นพดลพานิช">
-                
+                <div class="header-left col-md-2 d-none d-md-inline-block" style="background: #0089cf;">
+                    <img src="http://www.nopadol.com/img/LOGO-WHITE-NOPADOL-59.png" style="width: 100%; height: 44px;color: blue;" alt="นพดลพานิช">
                 </div>
-                <div class="search-container hidden-md-up" style="display:inline;float: center;">
-                    <input type="text" placeholder="Search.." name="search">
+                <div class="search-container hidden-md-up col-md-8 col-sm-11" style="display:inline-block !important;float: center;">
+                    <input type="text"  style="width: 500px;" placeholder="Search.." name="search">
                     <button type="submit" style="margin-left:-4px;padding: 6px 40px;background-color: blue;"><i class="fa fa-search" style="color:white;"></i></button>
                 </div>
-                <div class="header-right">
+                <div class="header-right d-none d-md-inline-block">
                     <div class="containner-div" align="center">
-                        <div class="C-icon">
+                        <div class="C-icon" onclick="menuallheader()">
                             <div class="iconmenu-header">
-                            <i class="fab fa-elementor"></i>
-                                </div>
-                        </div>
-                        
-                        <div class="C-icon">
-                            <div class="box-global">
-              <i class="fas fa-globe"></i>
-              <div class="numinnotification">
-               13
-          </div>
-                </div>
-                        </div>
-                        <div class="C-icon" >
-                            <div class="box-global" >
-                                
-
-                                <div class="profile-login">
-                                </div>
-
+                                <i class="fab fa-elementor"></i>
                             </div>
                         </div>
+                        <div style="display: none" id="menuallheader">
+                            <div class="moom"></div>
+                            <div class="detail-iconmenu">
+                                <div class="contain-menu">
+                                    <div class="row">
+                                        <div class="menumore" onClick="alert('time')">
+                                            <div class="img-menumore">
+                                                <i class="fab fa-algolia"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Time</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Contact')">
+                                            <div class="img-menumore">
+                                                <i class="fas fa-address-book"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold; font-size:14px;letter-spacing: 3px;">Contact</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Card')">
+                                            <div class="img-menumore">
+                                                <i class="fas fa-address-card"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Card</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Print')">
+                                            <div class="img-menumore">
+                                                <i class="fas fa-print"></i>
+                                                <div style="align-content: center">
+                                                <span style="display: block; line-height: 20px; white-space: nowrap;width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Print</span>
+                                                    </div>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('App')">
+                                            <div class="img-menumore">
+                                                <i class="fab fa-app-store-ios"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">App</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Notifi')">
+                                            <div class="img-menumore">
+                                                <i class="far fa-bell"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Notifi</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Chart')">
+                                            <div class="img-menumore">
+                                                <i class="fas fa-chart-bar"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Chart</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Music')">
+                                            <div class="img-menumore">
+                                                <i class="fab fa-itunes-note"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Music</span>
+                                            </div>
+                                        </div>
+                                        <div class="menumore" onClick="alert('Chat')">
+                                            <div class="img-menumore">
+                                                <i class="fab fa-rocketchat"></i>
+                                                <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Chat</span>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="C-icon" onclick="menu2header()">
+                            <div class="box-global">
+                                <i class="fas fa-globe"></i>
+                                <div class="numinnotification">
+                                    99
+                                </div>
+                            </div>
+                        </div>
+                        <div style="display: none" id="menu2header">
+                            <div class="moom2"></div>
+                            <div class="detail-iconmenu2">
+                                <div class="contain-menu">
+                                    <div class="row">
+                                        <div class="menu2-more">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu2-more" onClick="alert('Contact')">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu2-more" onClick="alert('Card')">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu2-more" onClick="alert('Print')">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu2-more" onClick="alert('App')">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu2-more" onClick="alert('Chart')">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="menu2-more" onClick="alert('Chat')">
+                                            <div class="img-menumore">
+                                                <div class="leftbody">
+                                                    <i class="far fa-user"></i>
+                                                </div>
+                                                <div class="rightbody" align="left">Hercules ได้ทำรายการสั่งซื้อ
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="C-icon" onclick="menu3showhide()">
+                            <div class="box-global">
+                                <div class="profile-login">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- detail-->
+                        <div style="display: none;"id="menu3showhide">
+                        <div class="moom3"></div>
+                        <div class="detailmenu3">
+                            <div class="profilemenu3">
+                                <div class="containimg">
+                                    <img alt="profile-img" src="https://lh3.googleusercontent.com/-e5eA2mnAIOc/AAAAAAAAAAI/AAAAAAAAAAA/AB6qoq3dV3hH-uOO6Q_1jFKTC1SEIf-hjA/s96-c-mo/photo.jpg" style="border-radius: 50%;height: 116px;
+    width: 116px;">
+                                </div>
+                                <!--                               <span style="background: rgba(0,0,0,.54); top:145px; color: #fff; font-size: 9px; font-weight: bold; left: 54px; line-height: 9px; position: absolute; padding: 7px 0; text-align: center; width: 96px;">Change</span>-->
+                                <div class="contentprofile">
+                                    <div style="font-weight: bold;
+
+    text-overflow: ellipsis;
+    overflow: hidden;">Thanachot Khongmueng</div>
+                                    <div style="color: #666;
+    text-overflow: ellipsis;
+    overflow: hidden;">thanachot.nut@gmail.com</div>
+                                    <div style="display: inline-block;color: #ccc;
+    margin: 6px 0;">
+                                        <div style="display: inline-block;color: #36c;
+    text-decoration: none;">Google+ Profile</div>
+                                        <span aria-hidden="true" style="color: #ccc;">–</span>
+                                        <div style="    color: #36c;
+    text-decoration: none;display: inline-block;">Privacy</div>
+                                        <div style="display: block">
+                                            <a style="font-weight: bold; margin: 10px 0 0 0;background: #357ae8; border-color: #2f5bb7;color: #fff;cursor: pointer;
+                                            border: 1px solid #c6c6c6;padding: 0px 12px;line-height: 28px;
+border-radius: 2px;">
+                                            My Account</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                            </div>
+                        <!-- detail-->
                     </div>
                 </div>
-               
             </div>
             <!-- navbar head -->
             <!-- navbar body -->
-            <div class="topnav2">
+            <div class="topnav2" onclick="closethreemenu()">
                 <div class="row">
                     <div class="col-md-2">
                         <div class="nav2">
                             <span style="color:blue;"></span>
                         </div>
                     </div>
-                    <div class="col-md-6">
+                    <div class="col-md-6 ">
                         <div class="nav2">
-                            <button class="buttonbody" data-toggle="modal" data-target="#infolongmodal"><i class="fa fa-info-circle awesome"></i></button>
+                            <button class="buttonbody animation1-button-dura" data-toggle="modal" data-target="#infolongmodal"><i class="fa fa-info-circle awesome"></i></button>
                         </div>
                         <div class="nav2">
-                            <button class="buttonbody" data-toggle="modal" data-target="#modaldelete"><i class="fa fa-trash awesome"></i></button>
-                            <button class="buttonbody" data-toggle="modal" data-target="#modalpage"><i class="fa fa-file awesome"></i></button>
-                            <button class="buttonbody" data-toggle="modal" data-target="#modalfolder"><i class="fa fa-folder awesome"></i></button>
+                            <button class="buttonbody animation2-button-dura" data-toggle="modal" data-target="#modaldelete"><i class="fa fa-trash awesome"></i></button>
+                            <button class="buttonbody animation3-button-dura" data-toggle="modal" data-target="#modalpage"><i class="fa fa-file awesome"></i></button>
+                            <button class="buttonbody animation4-button-dura" data-toggle="modal" data-target="#modalfolder"><i class="fa fa-folder awesome"></i></button>
                         </div>
                         <div class="nav2" style="white-space: nowrap;">
-                            <button class="buttonbody" data-toggle="modal" data-target="#dangerfolder"><i class="fa fa-exclamation-triangle awesome"></i></button>
-                            <button class="buttonbody"><span style="font-size:12.5px;">เพิ่มเติม</span></button>
+                            <button class="buttonbody animation5-button-dura" data-toggle="modal" data-target="#dangerfolder"><i class="fa fa-exclamation-triangle awesome"></i></button>
+                            <button class="buttonbody animation6-button-dura"><span style="font-size:12.5px;">เพิ่มเติม</span></button>
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="nav2">
-                            <button class="buttonbody"><i class="fa fa-chevron-left awesome"></i></button>
-                            <button class="buttonbody" style="margin-left:-4px;"><i class="fa fa-chevron-right awesome"></i></button>
-                            <button class="buttonbody"><i class="fa fa-cog awesome"></i></button>
+                            <button class="buttonbody animation7-button-dura"><i class="fa fa-chevron-left awesome"></i></button>
+                            <button class="buttonbody animation8-button-dura" style="margin-left:-4px;"><i class="fa fa-chevron-right awesome"></i></button>
+                            <button class="buttonbody animation9-button-dura"><i class="fa fa-cog awesome"></i></button>
                         </div>
                     </div>
                 </div>
@@ -777,7 +1175,7 @@ div.float:hover{
               </form>
             </div>
           </nav> -->
-            <div class="row">
+            <div class="row" onclick="closethreemenu()">
                 <div class="col-md-3">
                     <div class="sidenav2 d-none d-md-block">
                         <div>
@@ -803,19 +1201,19 @@ div.float:hover{
                 <div class="col-md-9">
                     <div class="main2">
                         <div class="col-md-12" style="margin-left: -15px;">
-                            <div class="menuinmain" onclick="myFunction()">
+                            <div class="menuinmain col-sm-4 col-md-3" onclick="myFunction()">
                                 <div class="hovermainmenu1"></div>
                                 <div class="animationintop" style="margin-left:15px;">
-                                    <i class="fa fa-inbox awesome" style="font-size: 20px;"></i> <span class="normalspan">หลัก</span>
+                                    <i class="fa fa-inbox awesome" style="font-size: 20px;"></i> <span class="normalspan ">หลัก</span>
                                 </div>
                             </div>
-                            <div class="menuinmain" onclick="myFunction2()" style="margin-left: -7px;">
+                            <div class="menuinmain col-sm-4 col-md-3" onclick="myFunction2()" style="margin-left: -7px;">
                                 <div class="hovermainmenu2"></div>
                                 <div class="animationintop" style="margin-left:15px;">
                                     <i class="fa fa-users awesome" style="font-size: 20px;"></i><span class="normalspan" style="margin-left:8px;">โซเชียล</span>
                                 </div>
                             </div>
-                            <div class="menuinmain" onclick="myFunction3()" style="margin-left: -7px;">
+                            <div class="menuinmain col-sm-4 col-md-3" onclick="myFunction3()" style="margin-left: -7px;">
                                 <div class="hovermainmenu3"></div>
                                 <div class="animationintop" style="margin-left:15px;">
                                     <i class="fa fa-map-pin awesome" style="font-size: 20px;"></i>
@@ -824,12 +1222,11 @@ div.float:hover{
                             </div>
                         </div>
                         <div class="col-md-12"></div>
-
                         <div id="myinbox" style="display: block;">
                             <table id="inbox" style="box-sizing: border-box;padding: 0; text-overflow: ellipsis;" width="80%" class="animationintop">
-                               <tr style="cursor: pointer;" >
+                                <tr style="cursor: pointer;">
                                     <td width="2%">
-                                     <input type="checkbox" style="cursor: pointer;">
+                                        <input type="checkbox" style="cursor: pointer;">
                                     </td>
                                     <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
                                     <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
@@ -845,7 +1242,7 @@ div.float:hover{
                                     <td width="2%"><i class="fa fa-star" style="opacity:0.2;display:pointer"></i></td>
                                     <td width="2%"><i class="fa fa-map-pin" style="opacity:0.2;display:pointer"></i></td>
                                     <td width="18%"><span style="font-size:12px;"><b>Bualuang mBanking</b></span></td>
-                                    <td  width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b>บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / sign-on to Bualuang mBank</b></span></td>
                                     <td width="2%"><span style="font-size:12px;"></span></td>
                                     <td width="5%"><span style="font-size:12px;"><b>09:56</b></span></td>
                                 </tr>
@@ -1479,200 +1876,198 @@ div.float:hover{
                         <div id="myDIV3" style="display: none;">
                             <h3 style="padding-top: 12px;" class="animationintop" align="center">Promotion</h3>
                             <table id="inbox" style="box-sizing: border-box;padding: 0; text-overflow: ellipsis;" width="80%" class="animationintop">
-                                    <tr>
-                                            <td width="2%">
-                                                <input type="checkbox" style="cursor: pointer;">
-                                            </td>   
-                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                </span>
-                                            </td>
-                                            <td width="2%"><span style="font-size:12px;"></span></td>
-                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                        </tr>
-                                        <tr>
-                                                <td width="2%">
-                                                    <input type="checkbox" style="cursor: pointer;">
-                                                </td>   
-                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                    </span>
-                                                </td>
-                                                <td width="2%"><span style="font-size:12px;"></span></td>
-                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                            </tr>    
                                 <tr>
-                                        <td width="2%">
-                                            <input type="checkbox" style="cursor: pointer;">
-                                        </td>   
-                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                        <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                        <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                            </span>
-                                        </td>
-                                        <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
-                                        <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                    </tr>
-                                    <tr>
-                                            <td width="2%">
-                                                <input type="checkbox" style="cursor: pointer;">
-                                            </td>   
-                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                </span>
-                                            </td>
-                                            <td width="2%"><span style="font-size:12px;"></span></td>
-                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                        </tr>
-                                        <tr>
-                                                <td width="2%">
-                                                    <input type="checkbox" style="cursor: pointer;">
-                                                </td>   
-                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                    </span>
-                                                </td>
-                                                <td width="2%"><span style="font-size:12px;"></span></td>
-                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                            </tr>
-                                            <tr>
-                                                    <td width="2%">
-                                                        <input type="checkbox" style="cursor: pointer;">
-                                                    </td>   
-                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                        </span>
-                                                    </td>
-                                                    <td width="2%"><span style="font-size:12px;"></span></td>
-                                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                                </tr>
-                                                <tr>
-                                                        <td width="2%">
-                                                            <input type="checkbox" style="cursor: pointer;">
-                                                        </td>   
-                                                        <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                        <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                        <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                        <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                            </span>
-                                                        </td>
-                                                        <td width="2%"><span style="font-size:12px;"></span></td>
-                                                        <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                                    </tr>
-                                                    <tr>
-                                                            <td width="2%">
-                                                                <input type="checkbox" style="cursor: pointer;">
-                                                            </td>   
-                                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                                </span>
-                                                            </td>
-                                                            <td width="2%"><span style="font-size:12px;"></span></td>
-                                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                                        </tr>
-                                                        <tr>
-                                                                <td width="2%">
-                                                                    <input type="checkbox" style="cursor: pointer;">
-                                                                </td>   
-                                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                                    </span>
-                                                                </td>
-                                                                <td width="2%"><span style="font-size:12px;"></span></td>
-                                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                                            </tr>
-                                                            <tr>
-                                                                    <td width="2%">
-                                                                        <input type="checkbox" style="cursor: pointer;">
-                                                                    </td>   
-                                                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                                        </span>
-                                                                    </td>
-                                                                    <td width="2%"><span style="font-size:12px;"></span></td>
-                                                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                                                </tr>
-                                                                 <tr>
-                                            <td width="2%">
-                                                <input type="checkbox" style="cursor: pointer;">
-                                            </td>   
-                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                </span>
-                                            </td>
-                                            <td width="2%"><span style="font-size:12px;"></span></td>
-                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                        </tr>
-                                    <tr>
-                                            <td width="2%">
-                                                <input type="checkbox" style="cursor: pointer;">
-                                            </td>   
-                                            <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                            <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                            <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                            <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                </span>
-                                            </td>
-                                            <td width="2%"><span style="font-size:12px;"></span></td>
-                                            <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                        </tr>
-                                        <tr>
-                                                <td width="2%">
-                                                    <input type="checkbox" style="cursor: pointer;">
-                                                </td>   
-                                                <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
-                                                <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
-                                                <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
-                                                <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
-                                                    </span>
-                                                </td>
-                                                <td width="2%"><span style="font-size:12px;"></span></td>
-                                                <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
-                                            </tr>
-                                    </table>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"><i class="fa fa-paperclip"></i></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                                <tr>
+                                    <td width="2%">
+                                        <input type="checkbox" style="cursor: pointer;">
+                                    </td>
+                                    <td width="2%"><i class="fa fa-star" id="starbookmark" onclick="bookmark(1)" style="opacity:0.2;cursor:pointer;"></i></td>
+                                    <td width="2%"><i class="fa fa-map-pin" id="pinmark" onclick="pinmark()" style="opacity:0.2;cursor:pointer"></i></td>
+                                    <td width="18%" align="center"><span style="font-size:12px;"><b>The Postman Team </b></span></td>
+                                    <td width="72%"><span style="font-size:12px;"><b> May News & Updates from Postman<span style="color:#777"> - Postman Collections Should be ''a default</span></b>
+                                        </span>
+                                    </td>
+                                    <td width="2%"><span style="font-size:12px;"></span></td>
+                                    <td width="5%"><span style="font-size:12px;"><b>18:17</b></span></td>
+                                </tr>
+                            </table>
                         </div>
-
                         <div id="inmail" style="display: none;">
                             <div style="background-color:transparent;padding-bottom:9px;width: 80%;margin:12px 1px 9px 1px;border-bottom: 1px solid #e5e5e5;">
                                 <table width="100%">
                                     <tr>
                                         <td width="85%">
-                                                <span style="font-size: 15px;">บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / Sign-on to Bualuang mBanking </span>
+                                            <span style="font-size: 15px;">บริการแจ้งเตือน เข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง / Sign-on to Bualuang mBanking </span>
                                         </td>
                                         <td width="5%">
-                                                <i class="fa fa-map-pin awesome" style="font-size: 20px;"></i>
+                                            <i class="fa fa-map-pin awesome" style="font-size: 20px;"></i>
                                         </td>
                                         <td width="10%">
                                             <div class="row">
-                                                <div class="hoverinbox" style="padding: 1px 7px;cursor: pointer;"> <span style="font-size: 10px;">กล่องจดหมาย</span></div><div class="hoverinbox" align="center" style="padding: 1px 3px;cursor: pointer;">x</div>
+                                                <div class="hoverinbox" style="padding: 1px 7px;cursor: pointer;"> <span style="font-size: 10px;">กล่องจดหมาย</span></div>
+                                                <div class="hoverinbox" align="center" style="padding: 1px 3px;cursor: pointer;">x</div>
                                             </div>
                                         </td>
                                     </tr>
-                                   
                                 </table>
-                                
                             </div>
-                            <div  style="word-break: break-word;width: 80%;border-bottom: 1px solid #e5e5e5;padding-bottom:100px;" >
-                            <span style="font-size: 12px" style="padding-top: 60px;word-break: break-word;padding-right:50px; ">
+                            <div style="word-break: break-word;width: 80%;border-bottom: 1px solid #e5e5e5;padding-bottom:100px;">
+                                <span style="font-size: 12px" style="padding-top: 60px;word-break: break-word;padding-right:50px; ">
                                     บริการแจ้งเตือน: การเข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง
 
                                     ธนาคารขอเรียนให้ท่านทราบว่า มีการเข้าใช้งานในระบบบัวหลวง เอ็มแบงก์กิ้ง ล่าสุดเมื่อวันที่ 21 พฤษภาคม 2561 เวลา 18:43น.              
@@ -1690,10 +2085,8 @@ div.float:hover{
                                     
                                     Please be informed that you recently logged-in to Bualuang mBanking on 21 May 2018 at 18:43 (Thailand time). 
                             </span>
-                        </div>
                             </div>
-
-
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1796,82 +2189,122 @@ div.float:hover{
             </div>
         </div>
     </div>
-
-
-
     <!-- bootstrap aftersend -->
-
     <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog" role="document">
-              <div class="modal-content">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
                 <div class="modal-header">
-                  <h5 class="modal-title" id="exampleModalLabel">ข้อความที่ต้องการส่ง ?</h5>
-                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                    <span aria-hidden="true">&times;</span>
-                  </button>
+                    <h5 class="modal-title" id="exampleModalLabel">ข้อความที่ต้องการส่ง ?</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
                 <div class="modal-body">
-                  
                     <div class="form-group">
-                      <label for="recipient-name" class="col-form-label">ถึง:</label>
-                      <input type="text" class="form-control" id="toemail" readonly>
+                        <label for="recipient-name" class="col-form-label">ถึง:</label>
+                        <input type="text" class="form-control" id="toemail" readonly>
                     </div>
                     <div class="form-group">
-                      <label for="message-text" class="col-form-label">เรื่อง:</label>
-                      <textarea class="form-control" id="subjectmail" readonly></textarea>
+                        <label for="message-text" class="col-form-label">เรื่อง:</label>
+                        <textarea class="form-control" id="subjectmail" readonly></textarea>
                     </div>
                     <div class="form-group">
-                            <label for="message-text" class="col-form-label">ข้อความ</label>
-                            <textarea class="form-control" id="message-text" readonly></textarea>
-                          </div>
+                        <label for="message-text" class="col-form-label">ข้อความ</label>
+                        <textarea class="form-control" id="message-text" readonly></textarea>
+                    </div>
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                  <button type="button" class="btn btn-primary" onclick="form_success()">Send message</button>
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary" onclick="form_success()">Send message</button>
                 </div>
-              </div>
             </div>
-          </div>
-
+        </div>
+    </div>
     <!-- bootstrap aftersend -->
     <script>
-        function closewriteinboxhide(){
-            document.getElementById('writeinboxhide').style.display = 'none';
+        function closethreemenu(){
+         document.getElementById("menuallheader").style.display = "none";
+        document.getElementById("menu2header").style.display = "none";
+        document.getElementById("menu3showhide").style.display = "none";
+}
+        function menu3showhide(){
+              document.getElementById("menuallheader").style.display = "none";
+        document.getElementById("menu2header").style.display = "none";
+            
+            var s = document.getElementById("menu3showhide");
+        if (s.style.display === "none") {
+            s.style.display = "inline-block";
+        } else {
+            s.style.display = "none";
+        }
+        }
+    function menu2header() {
+        document.getElementById("menuallheader").style.display = "none";
+        document.getElementById("menu3showhide").style.display = "none";
+        var s = document.getElementById("menu2header");
+        if (s.style.display === "none") {
+            s.style.display = "inline-block";
+        } else {
+            s.style.display = "none";
+        }
+    }
 
+    function menuallheader() {
+        document.getElementById("menu2header").style.display = "none";
+        document.getElementById("menu3showhide").style.display = "none";
+        //            document.getElementById('menuallheader').style.display = 'inline-block';
+        var s = document.getElementById("menuallheader");
+        if (s.style.display === "none") {
+            s.style.display = "inline-block";
+        } else {
+            s.style.display = "none";
         }
-        function hideelement(){
-            document.getElementById('closemenuw').style.display = "none";
-            document.getElementById('writeinboxhide').style.display = "block";
-        }
-        function showelement(){
-            document.getElementById('closemenuw').style.display = "block";
-            document.getElementById('writeinboxhide').style.display = "none";
-        }
-        function form_success(){
-            $('#exampleModal').modal('hide');
-            swal("Sended", "Successfully", "success");
-        }
-        function mail_submail(){
-            document.getElementById('toemail').value = document.getElementById('mail_to').value
-            document.getElementById('subjectmail').value = document.getElementById('mail_subject').value
-            document.getElementById('message-text').value = document.getElementById('mail_detail').value
-            document.getElementById('closemenuw').style.display = "none";
-            document.getElementById('mail_to').value = '';
-            document.getElementById('mail_subject').value = '';
-            document.getElementById('mail_detail').value = '';
-        }
-       
-        function addclassanima(){
-            // $(".my-float").removeClass("anima-floatbutton");
-            $(".my-float").addClass("anima-floatbutton");
-          
-        }
-        function cancel(){
-            document.getElementById('closemenuw').style.display = "none";
-        }
-        function callwrite(){
-            document.getElementById('closemenuw').style.display = "block";
-        }
+    }
+
+    function closewriteinboxhide() {
+        document.getElementById('writeinboxhide').style.display = 'none';
+
+    }
+
+    function hideelement() {
+        document.getElementById('closemenuw').style.display = "none";
+        document.getElementById('writeinboxhide').style.display = "block";
+    }
+
+    function showelement() {
+        document.getElementById('closemenuw').style.display = "block";
+        document.getElementById('writeinboxhide').style.display = "none";
+    }
+
+    function form_success() {
+        $('#exampleModal').modal('hide');
+        swal("Sended", "Successfully", "success");
+    }
+
+    function mail_submail() {
+        document.getElementById('toemail').value = document.getElementById('mail_to').value
+        document.getElementById('subjectmail').value = document.getElementById('mail_subject').value
+        document.getElementById('message-text').value = document.getElementById('mail_detail').value
+        document.getElementById('closemenuw').style.display = "none";
+        document.getElementById('mail_to').value = '';
+        document.getElementById('mail_subject').value = '';
+        document.getElementById('mail_detail').value = '';
+    }
+
+    function addclassanima() {
+        // $(".my-float").removeClass("anima-floatbutton");
+        $(".my-float").addClass("anima-floatbutton");
+
+    }
+
+    function cancel() {
+        document.getElementById('closemenuw').style.display = "none";
+    }
+
+    function callwrite() {
+        document.getElementById('closemenuw').style.display = "block";
+    }
+
     function bookmark(val) {
 
         document.getElementById('starbookmark').style.opacity = "1";
@@ -1921,8 +2354,8 @@ div.float:hover{
     }
 
     function openNav() {
-        document.getElementById("mySidenav").style.width = "250px";
-        document.getElementById("main").style.marginLeft = "250px";
+        document.getElementById("mySidenav").style.width = "200px";
+        document.getElementById("main").style.marginLeft = "200px";
         // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
     }
 
@@ -1932,16 +2365,16 @@ div.float:hover{
         document.body.style.backgroundColor = "white";
     }
 
-    function seeinmail(){
-      
+    function seeinmail() {
+
         document.getElementById("myDIV2").style.display = "none";
         document.getElementById("myDIV").style.display = "none";
         document.getElementById("myinbox").style.display = "none";
         document.getElementById("myDIV3").style.display = "none";
         document.getElementById("inmail").style.display = "block";
-     
+
         alert('เข้าเมลล์')
-        
+
     }
     </script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
