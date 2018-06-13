@@ -179,7 +179,7 @@
         }
 
         .contain-menu {
-/*            background: rgba(0, 0, 0, 0.1);*/
+            /*            background: rgba(0, 0, 0, 0.1);*/
             position: absolute;
 
             top: 15px;
@@ -207,7 +207,7 @@
             cursor: pointer;
             position: relative;
             display: inline-block;
-/*            background: rgba(0, 0, 0, 0.25);*/
+            /*            background: rgba(0, 0, 0, 0.25);*/
             height: 78px;
             width: 385px;
             padding: 1px;
@@ -399,7 +399,7 @@
         .topnav .search-container {
             float: center;
 
-                
+
         }
 
         .topnav input[type=text] {
@@ -896,7 +896,7 @@
 
 
             .menurightsmalldevice {
-              
+
                 display: flex !important;
                 flex-direction: column;
                 position: fixed;
@@ -1088,8 +1088,9 @@
 
         }
 
+        /*
         .modalPOS {
-            width: 1100px;
+            width: 100%;
             height: 1100px;
             position: fixed;
             z-index: 1050;
@@ -1118,7 +1119,7 @@
             position: relative;
 
         }
-
+*/
 
         table.tableSection {
             display: table;
@@ -1147,6 +1148,7 @@
             width: 33%;
         }
 
+        /*
         .modalPOS .pos-header {
             position: relative;
             top: 0;
@@ -1181,13 +1183,48 @@
             top: 15%;
             transform: translateX(-50%);
             width: 90px;
-            /*            color: red\\;*/
+                        color: red\\;
             font-weight: bold;
             letter-spacing: 5px;
             border-radius: 10px
         }
+*/
 
         /*        menu right responsive small mobile*/
+
+        .headerposmodail {
+            width: 100%;
+            height: 60px;
+            background: #7FB3D5;
+        }
+
+        .tableproductpos {
+            font-size: 12px;
+
+
+        }
+
+        #table-scroll {
+            height: 220px;
+            overflow: auto;
+
+        }
+
+        .tableproductpos td {
+            padding: 5px;
+        }
+
+        .moneyredraw {
+            background: green;
+            color: white;
+            width: 80%;
+            margin-top: 10px;
+            border-radius: 20px;
+            opacity: 1;
+            height: 240px;
+            z-index: 0;
+            transition: all 0.5s;
+        }
 
     </style>
 
@@ -1787,7 +1824,7 @@ border-radius: 2px;">
                             <a href="#contact"><span class="normalspan "><label class="animationleft">จดหมายส่งแล้ว</label></span></a>
                         </div>
                         <div class="menuleft">
-                            <a onclick="openPOS()"><span class="normalspan "><label class="animationleft">POS</label></span></a>
+                            <a data-toggle="modal" data-target=".bd-example-modal-lg"><span class="normalspan "><label class="animationleft">POS</label></span></a>
                         </div>
                     </div>
                 </div>
@@ -2745,7 +2782,7 @@ border-radius: 2px;">
         </div>
     </div>
 
-    <div class="modalPOS" id="modalPOS">
+    <!-- <div class="modalPOS" id="modalPOS">
         <div class="pos-content">
             <div class="pos-header">
                 <div class="nametopic">
@@ -2840,7 +2877,7 @@ border-radius: 2px;">
                             </tr>
                         </table>
 
-                        <!--
+                        
                         <table class="tableSection" border="1">
                             <thead>
                                 <tr>
@@ -2935,7 +2972,7 @@ border-radius: 2px;">
                                 <td>genre1</td>
                             </tr>
                         </table>
--->
+
 
 
                     </div>
@@ -2998,209 +3035,462 @@ border-radius: 2px;">
             </div>
         </div>
     </div>
+-->
 
     <!--    closemodalpos()-->
 
-    <script>
-        var modal = document.getElementById('modalPOS');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
+    <!--    pos modal -->
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" style="max-width: 1000px !important;">
+            <div class="modal-content">
+                <div id="head" class="headerposmodail">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12" style="padding-top:7px;
+                         font-weight: bold;
+                         
+                         color: white;
+                         font-size:15px">
+                                <div style="border: 2px solid black;
+                                                    box-shadow: 7px 2px 15px black;
+                 padding: 4px;">
+
+                                    <div style="width:70%;display: inline-block;letter-spacing: 9px;font-size:25px;" align="center">Point of Sale</div>
+
+                                    <div style="width: 30%;display: inline-block;
+                                                border: 1px solid white;
+                                                width: 200px;
+                                                padding: 6px 18px;
+                                                border-radius: 20px"><i class="fas fa-user" style="padding-right: 15px;"></i>Username</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container">
+                    <div class="row">
+                        <div style="width:60%;height: 500px">
+                            <div id="search" style="border: 2px solid black;
+                                          width: 100%;
+                                          height: 36px;
+                                          margin-left: 25px;
+                                          margin-top: 25px;">
+
+                                <div style="padding-left: 10px;padding-top: 3px;
+                                       background: white;width: 100%;display: inline-block;padding-bottom: 2px;">
+
+
+                                    <i class="fas fa-search"></i>
+                                    <input type="text" value="test" style="width:90%;padding-left: 15px;">
+                                </div>
+
+                                <div id="table-scroll">
+                                    <table border="1" class="tableproductpos" width="100%">
+                                        <tr>
+                                            <td>Del</td>
+                                            <td>รหัสสินค้า</td>
+                                            <td>ชื่อสินค้า</td>
+                                            <td>จำนวน</td>
+                                            <td>ราคา</td>
+                                            <td>AMT</td>
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="10%">53221</td>
+                                            <td width="85%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                        <tr>
+                                            <td align="center" style="font-size:20px;color:red;"><i class="fas fa-trash-alt"></i></td>
+                                            <td width="20%">53221</td>
+                                            <td width="80%">สบู่</td>
+                                            <td>1</td>
+                                            <td>25</td>
+                                            <td>AMT</td>
+
+                                        </tr>
+                                    </table>
+                                </div>
+                                <div style="border: 1px solid black; height: 100px; width: 100%; padding-right: 20px;">
+                                    <div style="display: block !important;" align="right">Subtotal : <b>2525.31</b></div>
+                                    <div style="display: block !important;" align="right">Vat = 101.27</div>
+                                    <div style="display: block !important;" align="right">Total = <b>2126.58</b></div>
+                                    <div style="display: block !important;" align="right">Total Item = 8</div>
+                                </div>
+                                <div style="
+                                             margin-top: 10px;
+                                             height: 90px;
+                                             width: 100%;
+                                             background-color: transparent;
+                                             border: 2px solid black;">
+                                    <div style="padding-top:50px;padding-left: 20px;">
+                                        <span>____________________________________________________________</span>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div style="width:34%;background: white;margin-left:26px;margin-top: 25px;" align="center">
+                            <div style="background: red;color:white;width: 80%;height: 100px; border-radius: 20px">
+                                <div style="color:white;
+                                                width:100%;
+                                                height: 30px;
+                                                padding-top: 10px;
+                                                letter-spacing: 3px;
+                                                font-weight: bold; font-size: 20px;" align="center">Member
+                                </div>
+                                <div align="center" style="width:100%; font-size: 55px;
+                                                           height: 60px;">
+                                    <i class="fas fa-user-tie"></i>
+                                </div>
+                            </div>
+
+                            <div style="background: orange;color:white;width: 80%;height: 100px;margin-top: 10px; border-radius: 20px;">
+                                <div style="color:white;
+                                                width:100%;
+                                                height: 30px;
+                                                padding-top: 10px;
+                                                letter-spacing: 3px;
+                                                font-weight: bold; font-size: 20px;" align="center">Search
+                                </div>
+                                <div align="center" style="width:100%; font-size: 55px;
+                                                           height: 60px;">
+                                    <i class="fas fa-search"></i>
+                                </div>
+                            </div>
+
+
+                            <!--                            -->
+                            <div id="showhidecash" class="moneyredraw">
+                                <div style="padding-left:10px;padding-top:15px;">
+                                    <i class="fas fa-dollar-sign" style="font-size:35px;"></i><span style="font-size: 20px;letter-spacing: 8px;padding-left: 15px;font-weight: bold">CASH</span>
+                                </div>
+                                <div style="padding-top: 10px;">
+                                        <input type="text" style="border:3px soild black">
+                                </div>
+                                <div style="padding-top: 10px;"><span style="font-size: 20px;letter-spacing: 8px;padding-left: 15px;font-weight: bold">  Withdraw</span></div>
+                                <div style="padding-top: 10px;">
+
+                                    <input type="text" style="border:3px soild black">
+                                </div>
+                                <div style="padding-top: 10px;">
+                                    <div style="width: 100%;">
+                                        <div class="row">
+                                            <div style="width: 50%;display: inline-block">
+                                                <img src="QRCode.png" style="width: 90px;height: 50px;padding-left: 22px;"></div>
+                                            <div style="width: 50%;display: inline-block"><img style="padding-right: 17px;width: 80px;height: 50px;" src="download.jpeg"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!--                            -->
+                            
+<!--
+                            <div onclick="showhidemoney()" style="background: green;color:white;width: 80%;height: 200px;margin-top: 10px; border-radius: 20px; opacity: 1;display: block;cursor: pointer;z-index: 99;">
+                                <div style="color:white;
+                                                width:100%;
+                                                height: 30px;
+                                                padding-top: 10px;
+                                                letter-spacing: 3px;
+                                                font-weight: bold; font-size: 20px;" align="center">Money
+                                </div>
+                                <div align="center" style="width:100%; font-size: 55px;
+                                                           height: 60px;">
+                                    <i class="far fa-money-bill-alt"></i>
+                                </div>
+                            </div>
+-->
+
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!--    pos modal-->
+        <script>
+//            function showhidemoney() {
+//          document.getElementsByClassName("moneyredraw")[0].style.opacity = "1";
+//                document.getElementsByClassName("moneyredraw")[0].style.height  = "240px";
+//                
+//
+//            }
+            //        var modal = document.getElementById('modalPOS');
+            //        window.onclick = function(event) {
+            //            if (event.target == modal) {
+            //                modal.style.display = "none";
+            //            }
+            //        }
+            //
+            //        function openPOS() {
+            //            document.getElementsByClassName('modalPOS')[0].style.display = 'block';
+            //        }
+            //
+            //        function closemodalpos() {
+            //            $('#modalPOS').on('hidden', function() {
+            //                $('.pos-content').off('click');
+            //            });
+            //            document.getElementsByClassName('modalPOS')[0].style.display = 'none';
+            //        }
+
+            function toggleshowfloatbutton() {
+                document.getElementById("showquote").classList.toggle("showquote");
+                document.getElementById("showsalesorder").classList.toggle("showsalesorder");
+                document.getElementById("showdeposit").classList.toggle("showdeposit");
+
+
             }
-        }
 
-        function openPOS() {
-            document.getElementsByClassName('modalPOS')[0].style.display = 'block';
-        }
-
-        function closemodalpos() {
-            $('#modalPOS').on('hidden', function() {
-                $('.pos-content').off('click');
-            });
-            document.getElementsByClassName('modalPOS')[0].style.display = 'none';
-        }
-
-        function toggleshowfloatbutton() {
-            document.getElementById("showquote").classList.toggle("showquote");
-            document.getElementById("showsalesorder").classList.toggle("showsalesorder");
-            document.getElementById("showdeposit").classList.toggle("showdeposit");
-
-
-        }
-
-        function openNavright() {
-            document.getElementById("mySidenavright").style.display = 'block';
-            document.getElementById("mySidenavright").style.width = '100%';
-        }
-
-        function closeNavright() {
-            document.getElementById("mySidenavright").style.width = "0";
-        }
-
-        function openNav() {
-            document.getElementById('mySidenav').style.boxShadow = "1px 1px 13px 1px";
-            document.getElementById("mySidenav").style.width = "250px";
-        }
-
-        function closeNav() {
-            document.getElementById("mySidenav").style.width = "0";
-            document.getElementById('mySidenav').style.boxShadow = "none";
-        }
-
-        function closethreemenu() {
-            document.getElementById("menuallheader").style.visibility = "hidden";
-            document.getElementById("menu2header").style.visibility = "hidden";
-            document.getElementById("menu3showhide").style.visibility = "hidden";
-        }
-
-        function menu3showhide() {
-            document.getElementById("menuallheader").style.visibility = "hidden";
-            document.getElementById("menu2header").style.visibility = "hidden";
-
-            var s = document.getElementById("menu3showhide");
-            if (s.style.visibility === "hidden") {
-                s.style.visibility = "visible";
-            } else {
-                s.style.visibility = "hidden";
+            function openNavright() {
+                document.getElementById("mySidenavright").style.display = 'block';
+                document.getElementById("mySidenavright").style.width = '100%';
             }
-        }
 
-        function menu2header() {
-            document.getElementById("menuallheader").style.visibility = "hidden";
-            document.getElementById("menu3showhide").style.visibility = "hidden";
-            var s = document.getElementById("menu2header");
-            if (s.style.visibility === "hidden") {
-                s.style.visibility = "visible";
-            } else {
-                s.style.visibility = "hidden";
+            function closeNavright() {
+                document.getElementById("mySidenavright").style.width = "0";
             }
-        }
 
-        function menuallheader() {
-            document.getElementById("menu2header").style.visibility = "hidden";
-            document.getElementById("menu3showhide").style.visibility = "hidden";
-            //            document.getElementById('menuallheader').style.display = 'inline-block';
-            var s = document.getElementById("menuallheader");
-            if (s.style.visibility === "hidden") {
-                s.style.visibility = "visible";
-            } else {
-                s.style.visibility = "hidden";
+            function openNav() {
+                document.getElementById('mySidenav').style.boxShadow = "1px 1px 13px 1px";
+                document.getElementById("mySidenav").style.width = "250px";
             }
-        }
 
-        function closewriteinboxhide() {
-            document.getElementById('writeinboxhide').style.display = 'none';
+            function closeNav() {
+                document.getElementById("mySidenav").style.width = "0";
+                document.getElementById('mySidenav').style.boxShadow = "none";
+            }
 
-        }
+            function closethreemenu() {
+                document.getElementById("menuallheader").style.visibility = "hidden";
+                document.getElementById("menu2header").style.visibility = "hidden";
+                document.getElementById("menu3showhide").style.visibility = "hidden";
+            }
 
-        function hideelement() {
-            document.getElementById('closemenuw').style.display = "none";
-            document.getElementById('writeinboxhide').style.display = "block";
-        }
+            function menu3showhide() {
+                document.getElementById("menuallheader").style.visibility = "hidden";
+                document.getElementById("menu2header").style.visibility = "hidden";
 
-        function showelement() {
-            document.getElementById('closemenuw').style.display = "block";
-            document.getElementById('writeinboxhide').style.display = "none";
-        }
+                var s = document.getElementById("menu3showhide");
+                if (s.style.visibility === "hidden") {
+                    s.style.visibility = "visible";
+                } else {
+                    s.style.visibility = "hidden";
+                }
+            }
 
-        function form_success() {
-            $('#exampleModal').modal('hide');
-            swal("Sended", "Successfully", "success");
-        }
+            function menu2header() {
+                document.getElementById("menuallheader").style.visibility = "hidden";
+                document.getElementById("menu3showhide").style.visibility = "hidden";
+                var s = document.getElementById("menu2header");
+                if (s.style.visibility === "hidden") {
+                    s.style.visibility = "visible";
+                } else {
+                    s.style.visibility = "hidden";
+                }
+            }
 
-        function mail_submail() {
-            document.getElementById('toemail').value = document.getElementById('mail_to').value
-            document.getElementById('subjectmail').value = document.getElementById('mail_subject').value
-            document.getElementById('message-text').value = document.getElementById('mail_detail').value
-            document.getElementById('closemenuw').style.display = "none";
-            document.getElementById('mail_to').value = '';
-            document.getElementById('mail_subject').value = '';
-            document.getElementById('mail_detail').value = '';
-        }
+            function menuallheader() {
+                document.getElementById("menu2header").style.visibility = "hidden";
+                document.getElementById("menu3showhide").style.visibility = "hidden";
+                //            document.getElementById('menuallheader').style.display = 'inline-block';
+                var s = document.getElementById("menuallheader");
+                if (s.style.visibility === "hidden") {
+                    s.style.visibility = "visible";
+                } else {
+                    s.style.visibility = "hidden";
+                }
+            }
 
-        function addclassanima() {
-            // $(".my-float").removeClass("anima-floatbutton");
-            $(".my-float").addClass("anima-floatbutton");
+            function closewriteinboxhide() {
+                document.getElementById('writeinboxhide').style.display = 'none';
 
-        }
+            }
 
-        function cancel() {
-            document.getElementById('closemenuw').style.display = "none";
-        }
+            function hideelement() {
+                document.getElementById('closemenuw').style.display = "none";
+                document.getElementById('writeinboxhide').style.display = "block";
+            }
 
-        function callwrite() {
-            document.getElementById('closemenuw').style.display = "block";
-        }
+            function showelement() {
+                document.getElementById('closemenuw').style.display = "block";
+                document.getElementById('writeinboxhide').style.display = "none";
+            }
 
-        function bookmark(val) {
+            function form_success() {
+                $('#exampleModal').modal('hide');
+                swal("Sended", "Successfully", "success");
+            }
 
-            document.getElementById('starbookmark').style.opacity = "1";
-            document.getElementById('starbookmark').style.color = "yellow";
+            function mail_submail() {
+                document.getElementById('toemail').value = document.getElementById('mail_to').value
+                document.getElementById('subjectmail').value = document.getElementById('mail_subject').value
+                document.getElementById('message-text').value = document.getElementById('mail_detail').value
+                document.getElementById('closemenuw').style.display = "none";
+                document.getElementById('mail_to').value = '';
+                document.getElementById('mail_subject').value = '';
+                document.getElementById('mail_detail').value = '';
+            }
 
+            function addclassanima() {
+                // $(".my-float").removeClass("anima-floatbutton");
+                $(".my-float").addClass("anima-floatbutton");
 
-        }
+            }
 
-        function pinmark() {
-            document.getElementById('pinmark').style.opacity = "1";
-            document.getElementById('pinmark').style.color = "yellow";
-        }
+            function cancel() {
+                document.getElementById('closemenuw').style.display = "none";
+            }
 
-        function myinbox() {
-            document.getElementById("myDIV2").style.display = "none";
-            document.getElementById("myDIV").style.display = "none";
-            document.getElementById("myinbox").style.display = "block";
-            document.getElementById("myDIV3").style.display = "none";
-            document.getElementById("inmail").style.display = "none";
-        }
+            function callwrite() {
+                document.getElementById('closemenuw').style.display = "block";
+            }
 
-        function myFunction() {
-            // document.getElementById("promotion").style.display = "none";
-            document.getElementById('changenamemenu').innerHTML = "Home";
-            document.getElementById("myDIV2").style.display = "none";
-            document.getElementById("myDIV3").style.display = "none";
-            document.getElementById("myinbox").style.display = "none";
+            function bookmark(val) {
 
-            document.getElementById("myDIV").style.display = "block";
-            document.getElementById("inmail").style.display = "none";
-        }
-
-        function myFunction2() {
-            document.getElementById('changenamemenu').innerHTML = "Social";
-            document.getElementById("myDIV2").style.display = "block";
-            document.getElementById("myDIV").style.display = "none";
-            document.getElementById("myinbox").style.display = "none";
-            document.getElementById("myDIV3").style.display = "none";
-            document.getElementById("inmail").style.display = "none";
-        }
-
-        function myFunction3() {
-            document.getElementById('changenamemenu').innerHTML = "Promo";
-            document.getElementById("myDIV3").style.display = "block";
-            document.getElementById("myDIV2").style.display = "none";
-            document.getElementById("myinbox").style.display = "none";
-            document.getElementById("myDIV").style.display = "none";
-            document.getElementById("inmail").style.display = "none";
-
-        }
-
+                document.getElementById('starbookmark').style.opacity = "1";
+                document.getElementById('starbookmark').style.color = "yellow";
 
 
-        function seeinmail() {
+            }
 
-            document.getElementById("myDIV2").style.display = "none";
-            document.getElementById("myDIV").style.display = "none";
-            document.getElementById("myinbox").style.display = "none";
-            document.getElementById("myDIV3").style.display = "none";
-            document.getElementById("inmail").style.display = "block";
+            function pinmark() {
+                document.getElementById('pinmark').style.opacity = "1";
+                document.getElementById('pinmark').style.color = "yellow";
+            }
 
-            alert('เข้าเมลล์')
-        }
+            function myinbox() {
+                document.getElementById("myDIV2").style.display = "none";
+                document.getElementById("myDIV").style.display = "none";
+                document.getElementById("myinbox").style.display = "block";
+                document.getElementById("myDIV3").style.display = "none";
+                document.getElementById("inmail").style.display = "none";
+            }
 
-    </script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+            function myFunction() {
+                // document.getElementById("promotion").style.display = "none";
+                document.getElementById('changenamemenu').innerHTML = "Home";
+                document.getElementById("myDIV2").style.display = "none";
+                document.getElementById("myDIV3").style.display = "none";
+                document.getElementById("myinbox").style.display = "none";
+
+                document.getElementById("myDIV").style.display = "block";
+                document.getElementById("inmail").style.display = "none";
+            }
+
+            function myFunction2() {
+                document.getElementById('changenamemenu').innerHTML = "Social";
+                document.getElementById("myDIV2").style.display = "block";
+                document.getElementById("myDIV").style.display = "none";
+                document.getElementById("myinbox").style.display = "none";
+                document.getElementById("myDIV3").style.display = "none";
+                document.getElementById("inmail").style.display = "none";
+            }
+
+            function myFunction3() {
+                document.getElementById('changenamemenu').innerHTML = "Promo";
+                document.getElementById("myDIV3").style.display = "block";
+                document.getElementById("myDIV2").style.display = "none";
+                document.getElementById("myinbox").style.display = "none";
+                document.getElementById("myDIV").style.display = "none";
+                document.getElementById("inmail").style.display = "none";
+
+            }
+
+
+
+            function seeinmail() {
+
+                document.getElementById("myDIV2").style.display = "none";
+                document.getElementById("myDIV").style.display = "none";
+                document.getElementById("myinbox").style.display = "none";
+                document.getElementById("myDIV3").style.display = "none";
+                document.getElementById("inmail").style.display = "block";
+
+                alert('เข้าเมลล์')
+            }
+
+        </script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 </body>
 
 </html>
