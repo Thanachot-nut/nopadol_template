@@ -27,20 +27,20 @@
         }
 
 
-       
+
 
         ::-webkit-scrollbar-track {
             background: white;
         }
 
-    
+
 
         ::-webkit-scrollbar-thumb {
             background: #888;
             border-radius: 6px;
         }
 
-        
+
 
         /*
         ::-webkit-scrollbar-thumb:hover {
@@ -112,7 +112,7 @@
             border-radius: 2px;
             min-height: 350px;
             overflow-y: auto;
-            width: 350px;
+            width: 320px;
             z-index: 2;
             overflow-x: hidden;
         }
@@ -179,7 +179,7 @@
         }
 
         .contain-menu {
-            background: rgba(0, 0, 0, 0.1);
+/*            background: rgba(0, 0, 0, 0.1);*/
             position: absolute;
 
             top: 15px;
@@ -200,14 +200,15 @@
             padding: 1px;
             margin-left: 14px;
             margin-bottom: 5px;
+            border-radius: 18px;
         }
 
         .menu2-more {
             cursor: pointer;
             position: relative;
             display: inline-block;
-            background: rgba(0, 0, 0, 0.25);
-            height: 98px;
+/*            background: rgba(0, 0, 0, 0.25);*/
+            height: 78px;
             width: 385px;
             padding: 1px;
             margin-left: 14px;
@@ -219,7 +220,7 @@
             vertical-align: top;
             height: 60px;
             width: 64px;
-            color: white;
+            color: black;
             font-size: 50px
         }
 
@@ -397,6 +398,8 @@
 
         .topnav .search-container {
             float: center;
+
+                
         }
 
         .topnav input[type=text] {
@@ -567,8 +570,8 @@
 
         .animationintop {
             animation-name: moveintop;
-            animation-duration: 1s;
-            
+            animation-duration: 0.5s;
+
         }
 
         .animationintops {
@@ -621,21 +624,73 @@
             position: fixed;
             width: 60px;
             height: 60px;
-            bottom: 3%;
-            right: 3%;
+            bottom: 30px;
+            right: 45px;
+            background-color: #0C9;
+            color: #FFF;
+            border-radius: 50px;
+            text-align: center;
+            transform: rotate(360deg);
+            /*            box-shadow: 2px 2px 3px #999;*/
+            z-index: 99;
+        }
+
+        .showquote {
+            bottom: 100px !important;
+            background: red !important;
+            opacity: 1 !important;
+        }
+
+        .showsalesorder {
+            bottom: 170px !important;
+            background: blue !important;
+            opacity: 1 !important;
+        }
+
+        .showdeposit {
+            bottom: 240px !important;
+            background: green !important;
+            opacity: 1 !important;
+        }
+
+
+
+        .containfloatmenual {
+            position: fixed;
+            height: 400px;
+            bottom: 30px;
+            right: 45px;
+            background-color: transparent;
+            z-index: 99;
+            width: 60px;
+        }
+
+        .subfloat {
+            position: fixed;
+            width: 60px;
+            height: 60px;
+            bottom: 30px;
+            right: 45px;
             background-color: #0C9;
             color: #FFF;
             border-radius: 50px;
             text-align: center;
             /*            box-shadow: 2px 2px 3px #999;*/
-            z-index: 3;
+            z-index: 2;
+            transition: all 0.3s;
+            opacity: 0;
+            cursor: pointer;
         }
+
+
+        /*
         .float:hover {
             animation-name: spin;
             animation-duration: 1500ms;
             animation-iteration-count: infinite;
             animation-timing-function: linear;
         }
+*/
 
         @keyframes spin {
             from {
@@ -649,6 +704,21 @@
         .my-float {
             margin-top: 22px;
         }
+
+        .textbuttonfloat {
+            color: white !important;
+            display: inline-block;
+            background: rgba(0, 0, 0, .5);
+            border-radius: 10px;
+            padding: 5px 10px;
+            font-size: 14px;
+            position: absolute;
+            top: 11px;
+            right: 70px;
+            box-shadow: 2px 2px 3px rgba(0, 0, 0, .1);
+            white-space: nowrap;
+        }
+
 
         /* float button */
 
@@ -698,7 +768,7 @@
             outline: none;
             word-wrap: break-word;
         }
-        
+
         .buttonsubmit {
             padding: 0px 8px;
             border-radius: 2px;
@@ -718,7 +788,7 @@
         }
 
         .anima-floatbutton {
-            animation: degree 2s;
+            animation: degree 0.5s;
         }
 
         @keyframes degree {
@@ -753,47 +823,47 @@
         /* box for writeinbox */
 
         .animation1-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: .2s;
         }
 
         .animation2-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: .4s;
         }
 
         .animation3-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: .6s;
         }
 
         .animation4-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: .8s;
         }
 
         .animation5-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: 1s;
         }
 
         .animation6-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: 1.2s;
         }
 
         .animation7-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: 1.4s;
         }
 
         .animation8-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: 1.6s;
         }
 
         .animation9-button-dura {
-            animation: righttoleftshort 1.55s;
+            animation: righttoleftshort 0.5s;
             animation-delay: 1.8s;
         }
 
@@ -826,27 +896,27 @@
 
 
             .menurightsmalldevice {
-                transition: all 1s ease-in-out;
+              
                 display: flex !important;
                 flex-direction: column;
                 position: fixed;
                 /*                transition: transform(-50,-50);*/
-                right: 3%;
+                left: 20px;
                 top: 115px;
                 background: white;
                 z-index: 3;
                 border: #00bfe8 2px solid;
-                animation: rightmenuright 1.5s;
+                animation: lefttorightm 1s;
                 opacity: 0.2;
                 border-radius: 50px;
                 cursor: pointer;
-                transition: opacity 2s, height 2s;
+                transition: opacity 0.5s, height 0.5s;
                 height: 44px;
                 /*                overflow-y: scroll;*/
             }
 
             .menurightsmalldevice>div {
-                display: block;
+
                 background-color: white;
                 margin: 3px;
                 padding: 6px;
@@ -860,8 +930,6 @@
             .menurightsmalldevice:hover>div {
                 opacity: 1;
                 display: block;
-
-
             }
             .menurightsmalldevice>div:first-child {
                 display: block !important;
@@ -877,15 +945,15 @@
                 width: 90% !important;
             }
 
-            @keyframes rightmenuright {
+            @keyframes lefttorightm {
                 0% {
-                    transform: translateX(80px);
+                    transform: translateX(-80px);
                 }
                 100% {
                     transform: translateX(0);
                 }
             }
-           
+
 
 
         }
@@ -912,8 +980,9 @@
             left: 0;
             background-color: white;
             overflow-y: auto;
-            transition: 0.5s;
+            transition: 0.3s;
             overflow-x: hidden;
+            z-index: 999;
         }
 
         .sidenavleft a {
@@ -926,7 +995,7 @@
         }
 
         .sidenavleft a:hover {
-            color: #f1f1f1;
+            color: black;
         }
 
 
@@ -978,7 +1047,7 @@
             right: 0;
             background-color: white;
             overflow-x: hidden;
-            transition: 0.5s;
+            transition: 0.3s;
 
         }
 
@@ -1009,8 +1078,8 @@
             flex-direction: row;
             display: flex;
             position: relative;
-        
-           
+
+
         }
 
         .detailsearch>.sub {
@@ -1019,7 +1088,107 @@
 
         }
 
+        .modalPOS {
+            width: 1100px;
+            height: 1100px;
+            position: fixed;
+            z-index: 1050;
+            top: 0;
+            left: 0;
+            bottom: 0;
+            right: 0;
+            background: rgba(0, 0, 0, 0.6);
+            display: none;
+        }
+
+        .modalPOS .pos-content {
+            z-index: 1051;
+            position: relative;
+            top: 40px;
+            left: 40px;
+            bottom: 40px;
+            right: 40px;
+
+            background: white;
+            width: 90%;
+            height: 100%;
+        }
+
+        .modalPOS .pos-contenta {
+            position: relative;
+
+        }
+
+
+        table.tableSection {
+            display: table;
+            width: 100%;
+        }
+
+        table.tableSection thead,
+        table.tableSection tbody {
+            float: center;
+            width: 100%;
+        }
+
+        table.tableSection tbody {
+            overflow: auto;
+            height: 150px;
+        }
+
+        table.tableSection tr {
+            width: 100%;
+            display: table;
+            text-align: left;
+        }
+
+        table.tableSection th,
+        table.tableSection td {
+            width: 33%;
+        }
+
+        .modalPOS .pos-header {
+            position: relative;
+            top: 0;
+            width: 100%;
+            height: 60px;
+            background: #9ad3de;
+        }
+
+        .modalPOS .pos-profile {
+            display: inline-block;
+            float: right;
+            top: 10px;
+            right: 10px;
+            position: relative;
+            background: #89bdd3;
+            border-radius: 20px;
+            white-space: nowrap;
+            font-size: 20px;
+            padding: 1px 15px;
+            color: white;
+            box-shadow: 1px 4px rgba(0, 0, 0, 0.2);
+        }
+
+        .modalPOS .nametopic {
+            position: relative;
+            display: inline-block;
+            border: 4px solid rgba(255, 255, 255, .2);
+            box-shadow: 10px 10px 15px rgba(0, 0, 0, .5);
+            background: #e3e3e3;
+            padding: 1px 20px;
+            left: 50%;
+            top: 15%;
+            transform: translateX(-50%);
+            width: 90px;
+            /*            color: red\\;*/
+            font-weight: bold;
+            letter-spacing: 5px;
+            border-radius: 10px
+        }
+
         /*        menu right responsive small mobile*/
+
     </style>
 
     <head>
@@ -1280,12 +1449,35 @@
     </div>
     <!-- writeinbox -->
     <!-- float button-->
-    <div href="#" class="float" onclick="callwrite()">
+
+    <div class="float" onclick="toggleshowfloatbutton()">
         <i class="fa fa-plus my-float anima-floatbutton"></i>
     </div>
+    <div id="showquote" class="subfloat">
+        <i class="far fa-file my-float"></i>
+        <div class="textbuttonfloat">
+            ใบเสนอราคา
+        </div>
+    </div>
+
+    <div id="showsalesorder" class="subfloat">
+        <i class="far fa-file my-float"></i>
+        <div class="textbuttonfloat">
+            ใบสั่งขาย
+        </div>
+    </div>
+    <div id="showdeposit" class="subfloat">
+        <i class="far fa-file my-float"></i>
+        <div class="textbuttonfloat">
+            ใบมัดจำ
+        </div>
+    </div>
+
+
+
     <!-- float button -->
 
-
+    <!-- onclick="callwrite()"-->
 
     <!--  push content to right -->
     <div id="main">
@@ -1295,7 +1487,6 @@
 
                 <a class="d-md-none" onclick="openNav()" style="display: hidden;cursor:pointer"><span style="font-size:18px;">&#9776; </span>
                 </a>
-
                 <div class="showsmalldevice" style="display: none;padding-top:21px;float: center;transform: translate(-50%, -50%);left: 50%; top: 15px;position: absolute;" id="changenamemenu">Home</div>
                 <div class="showsmalldevice" style="display: inline-block;float: right;padding-top: 15px;padding-right: 20px;display: none;"><i onclick="openNavright()" class="fas fa-search" style="cursor: pointer;"></i></div>
 
@@ -1321,6 +1512,7 @@
                                 <div class="contain-menu">
                                     <div class="row">
                                         <div class="menumore" data-toggle="modal" data-target="#timemenu">
+                                            `
                                             <div class="img-menumore">
                                                 <i class="fab fa-algolia"></i>
                                                 <span style="display: block; line-height: 20px; white-space: nowrap; width: 100%;font-weight: bold;text-overflow: ellipsis; font-size:14px;letter-spacing: 3px;">Time</span>
@@ -1595,7 +1787,7 @@ border-radius: 2px;">
                             <a href="#contact"><span class="normalspan "><label class="animationleft">จดหมายส่งแล้ว</label></span></a>
                         </div>
                         <div class="menuleft">
-                            <a href="#contact"><span class="normalspan "><label class="animationleft">จดหมายร่าง</label></span></a>
+                            <a onclick="openPOS()"><span class="normalspan "><label class="animationleft">POS</label></span></a>
                         </div>
                     </div>
                 </div>
@@ -1606,14 +1798,14 @@ border-radius: 2px;">
                                 <!--width:28% ใส่ responsive หน้าจอเล็กสุด-->
                                 <div class="hovermainmenu1"></div>
                                 <div class="animationintop" style="margin-left:15px;">
-                                    <i class="fa fa-inbox awesome" style="font-size: 20px;"></i> <span class="normalspan ">Home</span>
+                                    <i class="fa fa-inbox awesome" style="font-size: 20px;"></i> <span class="normalspan ">ใบเสนอ</span>
                                 </div>
                             </div>
                             <div class="menuinmain col-sm-4 col-md-3 col-12" onclick="myFunction2()" style="margin-left: -7px;width: 34%; ">
                                 <!--width:36% ใส่ responsive หน้าจอเล็กสุด-->
                                 <div class="hovermainmenu2"></div>
                                 <div class="animationintop" style="margin-left:15px;">
-                                    <i class="fa fa-users awesome" style="font-size: 20px;"></i><span class="normalspan" style="margin-left:8px;">Social</span>
+                                    <i class="fa fa-users awesome" style="font-size: 20px;"></i><span class="normalspan" style="margin-left:8px;">สั่งขาย</span>
                                 </div>
                             </div>
                             <div class="menuinmain col-sm-4 col-md-3 col-12" onclick="myFunction3()" style="margin-left: -7px;width: 34%;">
@@ -1621,7 +1813,7 @@ border-radius: 2px;">
                                 <div class="hovermainmenu3"></div>
                                 <div class="animationintop" style="margin-left:15px;">
                                     <i class="fa fa-map-pin awesome" style="font-size: 20px;"></i>
-                                    <span class="normalspan" style="margin-left:8px;">Promo</span>
+                                    <span class="normalspan" style="margin-left:8px;">ใบมัดจำ</span>
                                 </div>
                             </div>
                         </div>
@@ -2552,9 +2744,292 @@ border-radius: 2px;">
             </div>
         </div>
     </div>
+
+    <div class="modalPOS" id="modalPOS">
+        <div class="pos-content">
+            <div class="pos-header">
+                <div class="nametopic">
+                    POS
+                </div>
+
+                <div class="pos-profile">
+                    <i class="fas fa-user-alt"></i>
+                    <span style="font-size:15px;">นาย ธนโชติ คงเมือง</span>
+                </div>
+            </div>
+
+            <div class="pos-contenta">
+                <div class="row">
+                    <div class="col-md-8" style="margin-left: 5px;margin-top:5px;display: inline-block !important;">
+
+                        <table border="1" class="pos-tableproduct" style="font-size: 15px;word-wrap:break-word; table-layout: fixed;border: 1px solid #25a0ee;display: table; width: 100%;">
+                            <tbody>
+                                <tr align="center" style="">
+                                    <td style="padding: 20px" width="65%">ตารางสินค้า</td>
+                                    <td style="padding: 5px" width="10%">จำนวน</td>
+                                    <td style="padding: 5px" width="15%">ราคา</td>
+                                    <td style="padding: 5px" width="10%">AMT</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+                                <tr align="center" style="padd">
+                                    <td style="padding: 10px;text-align: center !important;" width="85%">สบู่</td>
+                                    <td style="padding: 5px">3</td>
+                                    <td style="padding: 5px">300</td>
+                                    <td style="padding: 5px">5</td>
+                                </tr>
+
+                            </tbody>
+                            <tr>
+                                <td style="padding: 10px;text-align: center !important;" width="85%"> รวมคาทั้งหมด</td>
+                                <td style="padding: 5px"></td>
+                                <td style="padding: 5px"></td>
+                                <td style="padding: 5px"></td>
+                            </tr>
+                        </table>
+
+                        <!--
+                        <table class="tableSection" border="1">
+                            <thead>
+                                <tr>
+                                    <th><span class="text">ตารางสินค้า</span>
+
+                                    </th>
+                                    <th><span class="text">จำนวน</span>
+
+                                    </th>
+                                    <th><span class="text">ราคา</span>
+
+                                    </th>
+                                    <th><span class="text">AMT </span>
+
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 1</td>
+                                    <td>song 1</td>
+                                    <td>genre1</td>
+                                    <td>genre1</td>
+                                </tr>
+                                <tr>
+                                    <td>album2</td>
+                                    <td>song 2</td>
+                                    <td>genre2</td>
+                                    <td>genre1</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                <tr>
+                                    <td>album 0</td>
+                                    <td>song0</td>
+                                    <td>genre0</td>
+                                    <td>genre0</td>
+                                </tr>
+                                
+
+                            </tbody>
+                            <tr>
+                                <td>ราคาทั้งหมด</td>
+                                <td>dddd</td>
+                                <td>dddd</td>
+                                <td>genre1</td>
+                            </tr>
+                        </table>
+-->
+
+
+                    </div>
+                    <div class="col-md-3" style="margin-top:5px;">
+                        <div style="background: gray;
+                                  position: relative;
+                                  display: block;
+                                  width: 100%;
+                                  height: 100px;
+                                  box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,.05);">
+                            <div align="center" style="padding-top:10px;color:white;letter-spacing: 4px">สมาชิก</div>
+                            <div style="position: absolute;top: 65%;
+                                      left: 50%;transform: translate(-50%,-50%);color:white;font-size: 45px;"><i class="fas fa-user-tie"></i></div>
+
+                        </div>
+                        <div style="background: black;
+                                  position: relative;
+                                  display: block;
+                                  width: 100%;
+                                  height: 100px;
+                                  box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,.05);
+                                    margin-top:10px;">
+                            <div align="center" style="padding-top:10px;color:white;letter-spacing: 4px">ค้นหา</div>
+                            <div style="position: absolute;top: 65%;
+                                      left: 50%;transform: translate(-50%,-50%);color:white;font-size: 45px;"> <i class="fas fa-search"></i></div>
+
+                        </div>
+                        <div style="background: orange;
+                                  position: relative;
+                                  display: block;
+                                  width: 100%;
+                                  height: 100px;
+                                  box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,.05);
+                                    margin-top:10px;">
+                            <div align="center" style="padding-top:10px;color:white;letter-spacing: 4px">รับเงิน</div>
+                            <div style="position: absolute;top: 65%;
+                                      left: 50%;transform: translate(-50%,-50%);color:white;font-size: 45px;"> <i class="far fa-money-bill-alt"></i></div>
+                        </div>
+
+                        <div style="background: orange;
+                                  position: relative;
+                                  display: block;
+                                  width: 100%;
+                                  height: 100px;
+                                  box-shadow: 0 0.25rem 0.125rem 0 rgba(0,0,0,.05);
+                                    margin-top:10px;">
+                            <div align="center" style="padding-top:10px;color:white;letter-spacing: 4px">รับเงิน</div>
+                            <div style="position: absolute;top: 65%;
+                                      left: 50%;transform: translate(-50%,-50%);color:white;font-size: 45px;"> <i class="far fa-money-bill-alt"></i></div>
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--    closemodalpos()-->
+
     <script>
+        var modal = document.getElementById('modalPOS');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function openPOS() {
+            document.getElementsByClassName('modalPOS')[0].style.display = 'block';
+        }
+
+        function closemodalpos() {
+            $('#modalPOS').on('hidden', function() {
+                $('.pos-content').off('click');
+            });
+            document.getElementsByClassName('modalPOS')[0].style.display = 'none';
+        }
+
+        function toggleshowfloatbutton() {
+            document.getElementById("showquote").classList.toggle("showquote");
+            document.getElementById("showsalesorder").classList.toggle("showsalesorder");
+            document.getElementById("showdeposit").classList.toggle("showdeposit");
+
+
+        }
+
         function openNavright() {
-             document.getElementById("mySidenavright").style.display = 'block';
+            document.getElementById("mySidenavright").style.display = 'block';
             document.getElementById("mySidenavright").style.width = '100%';
         }
 
@@ -2719,9 +3194,10 @@ border-radius: 2px;">
             document.getElementById("inmail").style.display = "block";
 
             alert('เข้าเมลล์')
-
         }
+
     </script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
