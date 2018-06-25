@@ -1,2 +1,2 @@
 # nopadol_template
-test Jenkins
+test2 Jenkins
