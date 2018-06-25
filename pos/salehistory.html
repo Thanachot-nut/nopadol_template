@@ -1,0 +1,218 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>Login form</title>
+   
+ <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <meta charset="UTF-8">
+
+</head>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+           box-sizing: border-box;
+        }
+        .headerpos {
+            background: rgba(0, 0, 0, 0.75);
+            width: 100%;
+            height: 47px;
+            position: relative;
+            max-width: 100%;
+        }
+         .headerpos .hamburger {
+            margin-left: 14px;
+            padding-top: 4px;
+            display: inline-block
+        }
+        span{
+            font-family: lato;
+        }
+        .headerpos .div-center-header {
+            position: absolute;
+            display: inline-block;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 3;
+
+        }
+        .div-center-header .font-headerspan {
+            color: white;
+            font-weight: bold;
+
+        }
+        .div-right-header {
+            display: inline-block;
+            float: right;
+            position: relative;
+            margin-top: 10px;
+            margin-right: 13px;
+        }
+         .div-right-header .font {
+            position: relative;
+            display: inline-block;
+            padding-right: 15px;
+
+            bottom: 5px;
+            color: #3399ff;
+        }
+         .div-right-header .icon {
+            width: 30px;
+            height: 30px;
+            display: inline-block;
+            margin-right: 12px;
+        }
+        .buttonmenuopenclase{
+            display: inline-block;
+            border: 1px solid blue;
+            padding: 0.3% 4%;
+            margin-left: -4px
+        }
+        .tabledetail thead td{
+            padding: 1% 3%;
+            color: white;
+            font-family: lato;
+            text-align: center
+        }
+        .tabledetail tbody td{
+            padding: 1% 3%;
+            color: black;
+            font-family: lato;
+            text-align: center;
+        }
+        body{}
+    </style>
+<body>
+<div class="headerpos">
+        <div class="hamburger">
+            <a class="d-md-none" href="payment.html" onclick="openNav()" style="color: white"><span style="font-size:33px;">&#9776; </span>
+                </a>
+        </div>
+        <div class="div-center-header">
+            <span class="font-headerspan">SALE HISTORY</span>
+        </div>
+        <div class="div-right-header">
+            <div class="font">
+                <span>Virbula Test</span>
+            </div>
+            <div class="icon"><i class="fas fa-chevron-down" style="color: white; font-size:28px"></i></div>
+            <div class="icon"><i class="far fa-bell" style="color:#5cd65c;font-size:28px"></i></div>
+        </div>
+    </div>
+    
+    <div style="margin-top: 3%;margin-left: 3%;margin-right: 3%;">
+            <div class="buttonmenuopenclase"><span style="font-size: 1em">Open</span></div>
+            <div class="buttonmenuopenclase" style="background: blue;">
+                <span style="font-size: 1em">Closed</span></div>
+            <div class="buttonmenuopenclase"> <span style="font-size: 1em">All</span>
+            </div>
+            
+     
+        <div style="float: right">
+        <span style="font-size: 1em"><i class="fas fa-chevron-down"></i></span><span style="font-size: 1em">Advance Search</span></div>
+    </div>
+    
+      <div style="margin-top: 3%;margin-left: 3%;margin-right: 3%;">
+          <div style="width: 32.3333333%;float: left" ><input type="text" placeholder="All Closed Sales" style="padding:3%"></div>
+          <div style="width: 32.3333333%;float: left;text-align: center"><input type="text" placeholder="Search for customer" style="padding:3%"></div>
+          <div style="width: 32.3333333%;text-align: right;display: inline-block;"><input type="text" placeholder="Search for receipt no." style="padding:3%" ></div>
+    </div>
+     <div style="margin-top: 5%;margin-left: 3%;margin-right: 3%;position: relative;">
+         
+         <button style="padding:1% 12%;position: absolute;top: 50%;left: 50%;transform: translate(-50%,-50%);background-color: greenyellow;border-radius: 8px;"><span style="color: white;">SEARCH</span></button>
+             
+    </div>
+     <div style="margin-top: 12%;margin-left: 3%;margin-right: 3%;position: relative;">
+        <div style="overflow-x:auto;width: 100%">
+         <table border="0" class="tabledetail" width="100%" height="auto">
+            <thead style="background: blue;">
+         <tr>
+            <td>Date</td>
+             <td>User</td>
+             <td>RECEIPT</td>
+             <td>CUSTOMER</td>
+             <td>STATUS</td>
+             <td>SALE TOTAL</td>
+             <td></td>
+        </tr>
+            </thead>
+             
+            <tr> 
+            <td>August dd31 2016 01:30:34AM</td>
+             <td>Virbula Test</td>
+             <td>17001641</td>
+             <td>Joy karmakar</td>
+             <td style="color:greenyellow;">Sold</td>
+             <td>303.17</td>
+             <td>Email</td>
+                
+        </tr>
+                 <tr> 
+            <td>August dd31 2016 01:30:34AM</td>
+             <td>Virbula Test</td>
+             <td>17001641</td>
+             <td>Joy karmakar</td>
+             <td style="color:greenyellow;">Sold</td>
+             <td>303.17</td>
+             <td>Email</td>
+                
+        </tr>
+                 <tr> 
+            <td>August dd31 2016 01:30:34AM</td>
+             <td>Virbula Test</td>
+             <td>17001641</td>
+             <td>Joy karmakar</td>
+             <td style="color:greenyellow;">Sold</td>
+             <td>303.17</td>
+             <td>Email</td>
+                
+        </tr>
+                 <tr> 
+            <td>August dd31 2016 01:30:34AM</td>
+             <td>Virbula Test</td>
+             <td>17001641</td>
+             <td>Joy karmakar</td>
+             <td style="color:greenyellow;">Sold</td>
+             <td>303.17</td>
+             <td>Email</td>
+                
+        </tr>
+                 <tr> 
+            <td>August dd31 2016 01:30:34AM</td>
+             <td>Virbula Test</td>
+             <td>17001641</td>
+             <td>Joy karmakar</td>
+             <td style="color:greenyellow;">Sold</td>
+             <td>303.17</td>
+             <td>Email</td>
+                
+        </tr>
+                 <tr> 
+            <td>August dd31 2016 01:30:34AM</td>
+             <td>Virbula Test</td>
+             <td>17001641</td>
+             <td>Joy karmakar</td>
+             <td style="color:greenyellow;">Sold</td>
+             <td>303.17</td>
+             <td>Email</td>
+                
+        </tr>
+              
+         </table>
+         </div>
+    </div>
+    
+    
+    
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+
+</html>

@@ -1,0 +1,110 @@
+<html>
+    <style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .contain {
+        background: rgba(0, 0, 0, 0.2);
+        width: 100%;
+        height: 100vh;
+    }
+
+    .inputtt {
+        width: 100%;
+        height: 20%;
+        outline-color: none;
+        border: none;
+        font-size: 25px;
+    }
+
+    .underline {
+        position: relative;
+        height: 2px;
+        width: 2%;
+        margin: 0 auto;
+        transition: all 0.5s;
+        background-color: red;
+    }
+
+    /*
+        .contain .inputtt:focus{
+            width: 50% !important;
+        }
+*/
+
+    .inputtt:focus+.underline {
+        width: 100%;
+        background-color: #02add7;
+    }
+        .testcon{
+            width: 100%;
+            height: 30vh;
+            background: white;
+            position: relative;
+            visibility: hidden;
+        }
+        .box{
+            border: none;
+            position: relative;
+            display: block;
+            top:50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            width: 50px;
+            height: 50px;
+            background: black;
+            transform: rotate(45deg);
+        }
+        .box:before{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-top: 5px solid #58c747;
+            border-bottom: 5px solid #58c747;
+            box-sizing: border-box;
+            transition: 0.5s;
+            transform: scaleX(0);
+        }
+        .box:hover:before{
+            width: 100%;
+            transform: scaleX(1);
+        }
+        .box:after{
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-left: 5px solid #58c747;
+            border-right: 5px solid #58c747;
+            box-sizing: border-box;
+            transition: 0.5s;
+            transform: scaleY(0);
+            transition-delay: 0.5s;
+        }
+        .box:hover:after{
+            width: 100%;
+            transform: scaleY(1);
+        }
+</style>
+<div class="contain">
+
+    <input type="text" class="inputtt">
+    <div class="underline"></div>
+    
+    <div class="testcon">
+        <div class="box"></div>
+    </div>
+    dddd
+</div>
+
+</html>
