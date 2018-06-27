@@ -29,7 +29,7 @@
         /* optional: show position indicator in red */
 
         ::-webkit-scrollbar-thumb {
-            background: #FF0000;
+            /*            background: #FF0000;*/
         }
 
         body {
@@ -100,7 +100,6 @@
             position: relative;
             display: inline-block;
             padding-right: 15px;
-
             bottom: 5px;
             color: #3399ff;
         }
@@ -143,14 +142,13 @@
             margin-left: 17px;
             margin-bottom: 17px;
             background-color: rgba(0, 0, 0, 0.04);
+            transition: all 0.5s;
         }
 
         .containeritem .containimg {
             margin: 0 auto;
             width: 80%;
             height: 60%;
-
-
         }
 
         .containimg .img {
@@ -165,12 +163,11 @@
 
         .bottomborder {
             background-color: orange;
-            height: 15px;
+            height: 5%;
             width: 100%;
             position: absolute;
             left: 0;
             bottom: 0;
-
         }
 
         .containpos {
@@ -241,8 +238,9 @@
             padding: 4;
             background-color: yellow;
         }
-        .containerdetail .lineproduct:hover{
-            background-color: rgba(51, 153, 255,0.3);
+
+        .containerdetail .lineproduct:hover {
+            background-color: rgba(51, 153, 255, 0.3);
             cursor: pointer;
         }
 
@@ -252,7 +250,22 @@
             /*            border: 1px solid black;*/
             padding: 3px 3px;
             margin-bottom: 10px;
+            /*            animation: colorgreen 0.5s;*/
         }
+
+        /*
+        .containerdetail .lineproduct:last-child{
+        animation: colorgreen 0.8s;
+        }
+        @keyframes colorgreen {
+            0%{
+                background: green;
+            }
+            100% {
+                background: white;
+            }
+        }
+*/
 
         .lineproduct .amountproduct {
             background-color: gray;
@@ -265,7 +278,7 @@
         }
 
         .amountproduct:hover>i {
-            transform: rotate(405deg) !important    ;
+            transform: rotate(135deg) !important;
         }
 
         .lineproduct .amountproduct:hover {
@@ -275,10 +288,11 @@
         .lineproduct .fontproduct {
             display: inline-block;
             position: relative;
+            height: 35px;
             top: 5px;
             left: 10px;
             width: 260px;
-            height: 34;
+
             /*            border: 1px solid black;*/
         }
 
@@ -292,6 +306,86 @@
             padding: 0 8px;
         }
 
+        .containerdetail .minusproduct {
+            float: left;
+            width: 15%;
+            height: 100%;
+            background-color: rgb(51, 173, 255);
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 1px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .containerdetail .minusproduct:hover {
+            background-color: rgb(119, 200, 255);
+        }
+
+        .containerdetail .addproduct:hover {
+            background-color: rgb(119, 200, 255);
+        }
+
+        .containerdetail .enterproduct {
+            background-color: orange;
+            width: 70%;
+            height: 100%;
+            float: left;
+            padding-top: 5px;
+            transition: 0.5s;
+            cursor: pointer;
+        }
+
+        .containerdetail .enterproduct:hover {
+            background: rgb(255, 192, 76);
+
+        }
+
+        .containerdetail .addproduct {
+            float: right;
+            width: 15%;
+            height: 100%;
+            background: rgb(51, 173, 255);
+            font-size: 20px;
+            font-weight: bold;
+            padding-top: 2px;
+            cursor: pointer;
+            transition: 0.5s;
+        }
+
+        .fade-enter {
+            opacity: 0;
+        }
+
+        .fade-enter-active {
+            animation: fadein 0.7s;
+        }
+
+        @keyframes fadein {
+            from {
+                background: rgba(0, 255, 0, 0.64);
+            }
+            to {
+                background: transparent;
+            }
+        }
+
+        .fade-leave {
+            opacity:1;
+        }
+
+        .fade-leave-active {
+            animation: fadeout 0.7s;
+        }
+
+        @keyframes fadeout {
+            from {
+                background: rgba(255,0,0,0.5);
+            }
+            to {
+                background: transparent;
+            }
+        }
     </style>
 </head>
 
@@ -330,193 +424,38 @@
                     <div style="width: 10%;height: 30px;display: inline-block;">
                         <i class="fas fa-search" style="padding-left:42px;position: relative;top:5px;color:green;font-size: 22"></i>
                     </div>
-                    <input type="text" class="form-control" style="width: 89%;padding: 13px;outline:none; border-top: none;border-left: none;border-right: none;display: inline-block;" placeholder="Search by product and customers" @keyup.enter="searchbarcodeproduct" v-model="datasearch">
+                    <input type="text" id="textsearchproduct" class="form-control" style="width: 89%;padding: 13px;outline:none; border-top: none;border-left: none;border-right: none;display: inline-block;" placeholder="Search by product and customers" @keyup.enter="searchbarcodeproduct" v-model="datasearch">
                 </div>
 
                 <div class="containerdetail" style="margin-left: 25px;display: none;opacity: 0;" align="center" id="productfound">
-                    <div class="containeritem" style="padding-top: 10px;width: 325px; height: 360px;">
+
+                    <div class="containeritem" style="padding-top: 10px;width: 325px; height: 360px;" v-for="found in foundproduct">
                         <div class="containimg">
                             <img src="cameraproduct.jpeg" class="img">
                         </div>
-                        <div class="descriproduct" style="margin-top: 15%"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder" style="height:30px"></div>
+                        
+                        <div class="descriproduct" style="margin-top: 10%;margin-bottom: 2%;"><span>{{ found.name }}</span></div>
+                       
+                        <span>{{ found.price }} THB</span>
+                        <div class="bottomborder" style="height:30px">
+                            <div class="minusproduct" @click="found.amountproduct -= 1"> - </div>
+                            <div class="enterproduct" @click="addproducttocart()">{{ found.amountproduct }}</div>
+                            <!--                            <div style="position: absolute;top:50%;left: 50%;transform: translate(-50%,-50%)"></div>-->
+                            <div class="addproduct" @click="found.amountproduct += 1"> + </div>
+                        </div>
                     </div>
                 </div>
 
-                <div class="containerdetail" style="margin-left: 25px" id="productall">
-                    <div class="containeritem" style="">
+                <div class="containerdetail" style="margin-left: 25px" id="productall" >
+                    <div class="containeritem" v-for="product in allproduct">
                         <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
+                            <img :src="product.img" class="img">
                         </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
+                        <div class="descriproduct"><span>{{ product.name }}</span></div>
                         <div class="bottomborder"></div>
                     </div>
-
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-                    <div class="containeritem">
-                        <div class="containimg">
-                            <img src="cameraproduct.jpeg" class="img">
-                        </div>
-                        <div class="descriproduct"><span>Canon Eos 60DDDD</span></div>
-                        <div class="bottomborder"></div>
-                    </div>
-
-
-
-
+                        
+                  
                 </div>
             </div>
 
@@ -538,226 +477,28 @@
                 </div>
 
                 <div class="containerdetail" style="margin-top: 12px !important;overflow-y: hidden;">
-                    <div style="height: 45%; overflow-y: auto">
+                    <div id="containerx" style="max-height:200px; overflow-y: auto;">
 
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
+                        <transition-group name="fade" mode="out-in">
+                            <div class="lineproduct" :key="product" v-for="(product, index) in products">
+                                <div class="amountproduct" align="center">
+                                    <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">{{ product.price }}</span>
+                                </div>
+                                <div class="fontproduct">
+                                    <span style="display: block;font-size: 12px">{{ product.name }}</span>
 
+                                </div>
+                                <div class="priceproduct" style="margin-right:28px ">
+                                    <span style="position: relative;top: 6px">{{ product.amount }} THB</span>
+                                </div>
+                                <div class="priceproduct" style="background-color: transparent;">
+                                    <span style="position: relative;top: 6px">{{ product.amount2 }} THB</span>
+                                </div>
+                                <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct(index)">
+                                    <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
+                                </div>
                             </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                           <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                           <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                            <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>  
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                           <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>  
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                           <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-                        <div class="lineproduct">
-                            <div class="amountproduct" align="center">
-                                <span style="font-size: 15px;font-weight: bold;position: relative;top: 10px">1</span>
-                            </div>
-                            <div class="fontproduct">
-                                <span style="display: block;font-size: 12px">Deeksha Men'..Deeksha Men'.. Deek Men'.. Deek</span>
-
-                            </div>
-                            <div class="priceproduct" style="margin-right:28px ">
-                                <span style="position: relative;top: 6px">$53330.50</span>
-                            </div>
-                            <div class="priceproduct" style="background-color: transparent;">
-                                <span style="position: relative;top: 6px">$5333330.50</span>
-                            </div>
-                           <div class="amountproduct" style="float: right;background: red;padding: 5px" @click="cancelproduct()">
-                                <i class="fas fa-plus" style="transform: rotate(45deg);font-size: 30px;transition: all 0.5s;"></i>
-                            </div>
-                        </div>
-
-
+                        </transition-group>
 
 
                     </div>
@@ -812,7 +553,8 @@
                         <div style="display: inline-block;background:#33adff;padding:5px 9px;border-radius: 6px"><span style="color: white;position: relative;bottom:1px;">Void</span></div>
                         <div style="display: inline-block;background:#33adff;padding:5px 9px;border-radius: 6px;margin-left: 15px"><span style="color: white;position: relative;bottom:1px">Park</span></div>
                         <a href="payment.html">
-                        <div  style="margin-left: 15px;display: inline-block;background: green;padding:5px 200px;border-radius: 10px;"><span style="color: white;font-size:19px;position: relative;bottom:1px" >Pay</span></div></a>
+                            <div style="margin-left: 15px;display: inline-block;background: green;padding:5px 200px;border-radius: 10px;"><span style="color: white;font-size:19px;position: relative;bottom:1px">Pay</span></div>
+                        </a>
                     </div>
 
 
@@ -825,6 +567,7 @@
 
         </div>
     </div>
+
     <script src="./newpos.js"></script>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-   KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
