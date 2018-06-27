@@ -236,7 +236,7 @@
             /*            border: 1px solid black;*/
             border-radius: 30px;
             padding: 4;
-            background-color: yellow;
+            background-color: white;
         }
 
         .containerdetail .lineproduct:hover {
@@ -510,7 +510,7 @@
                             <span style="font-size: 18px;">Subtotal</span>
                         </div>
                         <div style="display: inline-block;float: right">
-                            <span style="font-size: 18px;">$136.85</span>
+                            <span style="font-size: 18px;">{{ resultproduct }} THB</span>
                         </div>
                     </div>
 
@@ -519,7 +519,7 @@
                             <span style="font-size: 18px;">Discount</span>
                         </div>
                         <div style="display: inline-block;float: right">
-                            <input type="text" style="position: relative;bottom: 4px;margin-right: 50px;width: 100px"> <span style="font-size: 18px;position: relative;bottom: 4px;">%</span>
+                            <input type="text" style="position: relative;bottom: 4px;margin-right: 50px;width: 100px" v-model="discountper" @keyup="updateresultandtotal"> <span style="font-size: 18px;position: relative;bottom: 4px;">%</span>
                         </div>
                     </div>
                     <div style="display: block;position: relative;margin-top: 20px;margin-left: 16px;height: 20px;">
@@ -527,17 +527,17 @@
                             <span style="font-size: 18px;">Tax</span>
                         </div>
                         <div style="display: inline-block;float: right">
-                            <span style="font-size: 18px;">$.000</span>
+                            <span style="font-size: 18px;">{{ tax }}.00 %</span>
                         </div>
                         <div style="border-bottom:2px solid gray; position: absolute;top: 40px;width: 100%;">
                         </div>
                     </div>
                     <div style="display: block;position: relative;margin-top: 30px;margin-left: 16px;height: 20px;">
                         <div style="display: inline-block;float: left">
-                            <span style="font-size: 18px;">Total</span>
+                            <span style="font-size: 18px;">Total (Subtotal - Discount %) - tax%</span>
                         </div>
                         <div style="display: inline-block;float: right">
-                            <span style="font-size: 18px;">$123.17</span>
+                            <span style="font-size: 18px;">{{ totalproduct }} THB</span>
                         </div>
 
                     </div>
@@ -546,7 +546,7 @@
                             <span style="font-size: 18px;">Pay</span>
                         </div>
                         <div style="display: inline-block;float: right">
-                            <span style="font-size: 18px;">$123.17</span>
+                            <span style="font-size: 18px;">{{ paidproduct }} THB</span>
                         </div>
                     </div>
                     <div style="display: block;position: relative;margin-top: 5px;margin-left: 16px;height: 30px;padding: 3px;background-color: white;">

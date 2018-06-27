@@ -5,14 +5,14 @@ new Vue({
             message: '12345679',
             datasearch: '',
             amountproduct: 1,
-            foundproduct:[
+            foundproduct: [
                 {
-                    name:'Canon Eos 60DDDD',
-                    amountproduct:1,
-                    price:25000,
+                    name: 'Canon Eos 60DDDD',
+                    amountproduct: 1,
+                    price: 25000,
                 }
             ],
-            allproduct:[
+            allproduct: [
                 {
                     img: 'http://fs.lnwfile.com/_/fs/_raw/pk/53/yx.jpg',
                     name: 'HITACHI สว่าน',
@@ -61,8 +61,8 @@ new Vue({
                     img: 'http://fs.lnwfile.com/_/fs/_raw/vk/ky/ax.jpg',
                     name: 'กระเบื้องหลังคา',
                 },
-                
-                
+
+
             ],
             products: [
 //                {
@@ -72,6 +72,11 @@ new Vue({
 //                    amount2: '$533f3330.50'
 //                },
                 ],
+            resultproduct: 0,
+            discountper:0,
+            tax:7,
+            totalproduct:0,
+            paidproduct:0,
         }
     },
     methods: {
@@ -82,12 +87,16 @@ new Vue({
                 amount: this.foundproduct[0].price,
                 amount2: this.foundproduct[0].price * this.foundproduct[0].amountproduct
             })
-           
-            	
-      var container = this.$el.querySelector("#containerx");
-      container.scrollTop = container.scrollHeight;
-    
+            this.resultdetail();
+            this.totalfunction();
+//            var container = this.$el.querySelector("#containerx");
+//            container.scrollTop = container.scrollHeight;
+
             //            this.products.push()
+        },
+        updateresultandtotal(){
+          this.resultdetail();
+          this.totalfunction();  
         },
         searchbarcodeproduct() {
             if (this.datasearch == '') {
@@ -114,16 +123,36 @@ new Vue({
                 .then((Delete) => {
                     if (Delete) {
                         swal("Product has been deleted! " + index, {
-                        icon: "success",
+                            icon: "success",
                         });
-                      this.products.splice(index, 1);
+                        this.products.splice(index, 1);
+                        this.resultdetail();
+                        this.totalfunction();
                     } else {
                         swal("Your imaginary file is safe!");
                     }
                 });
+        },
+        resultdetail(){
+            var result = 0;
+            var i;
+            for (i = 0; i < this.products.length; i++) {
+                result += parseInt(this.products[i].amount2) ;
+            }
+            this.resultproduct = result;
+        },
+        totalfunction() {
+        var Subtotal = this.resultproduct;
+         var discount = (Subtotal*this.discountper)/100
+         console.log('d'+discount)
+         var tax = ((discount*this.tax)/100)+discount
+         this.totalproduct = tax
+            
+         this.paidproduct = this.resultproduct - tax;
         }
     },
     mounted() {
+
         document.getElementById("textsearchproduct").focus();
 
         //        if (this.datasearch == '') {
