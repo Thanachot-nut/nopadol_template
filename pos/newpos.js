@@ -73,10 +73,10 @@ new Vue({
 //                },
                 ],
             resultproduct: 0,
-            discountper:0,
-            tax:7,
-            totalproduct:0,
-            paidproduct:0,
+            discountper: 0,
+            tax: 7,
+            totalproduct: 0,
+            paidproduct: 0,
         }
     },
     methods: {
@@ -89,14 +89,14 @@ new Vue({
             })
             this.resultdetail();
             this.totalfunction();
-//            var container = this.$el.querySelector("#containerx");
-//            container.scrollTop = container.scrollHeight;
+            //            var container = this.$el.querySelector("#containerx");
+            //            container.scrollTop = container.scrollHeight;
 
             //            this.products.push()
         },
-        updateresultandtotal(){
-          this.resultdetail();
-          this.totalfunction();  
+        updateresultandtotal() {
+            this.resultdetail();
+            this.totalfunction();
         },
         searchbarcodeproduct() {
             if (this.datasearch == '') {
@@ -133,22 +133,32 @@ new Vue({
                     }
                 });
         },
-        resultdetail(){
+        resultdetail() {
             var result = 0;
             var i;
             for (i = 0; i < this.products.length; i++) {
-                result += parseInt(this.products[i].amount2) ;
+                result += parseInt(this.products[i].amount2);
             }
             this.resultproduct = result;
         },
         totalfunction() {
-        var Subtotal = this.resultproduct;
-         var discount = (Subtotal*this.discountper)/100
-         console.log('d'+discount)
-         var tax = ((discount*this.tax)/100)+discount
-         this.totalproduct = tax
-            
-         this.paidproduct = this.resultproduct - tax;
+
+            if (this.discountper > 0) {
+                var Subtotal = this.resultproduct;
+                var discount = (Subtotal * this.discountper) / 100
+                var x =  this.resultproduct - discount //เก็บ x ไว้
+//                console.log('xxx ' + x);
+                var tax = ((x * this.tax) / 100);
+              
+                this.totalproduct = discount + tax ;
+                this.paidproduct = this.resultproduct - (discount + tax);
+                
+
+            }
+
+            if (this.discountper <= 0) {
+                this.paidproduct = this.resultproduct - ((this.resultproduct * this.tax) / 100)
+            }
         }
     },
     mounted() {
