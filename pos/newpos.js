@@ -147,17 +147,20 @@ new Vue({
                 var Subtotal = this.resultproduct;
                 var discount = (Subtotal * this.discountper) / 100
                 var x =  this.resultproduct - discount //เก็บ x ไว้
-//                console.log('xxx ' + x);
-                var tax = ((x * this.tax) / 100);
-              
-                this.totalproduct = discount + tax ;
-                this.paidproduct = this.resultproduct - (discount + tax);
+                console.log('xxx ' + x);//24750
+                var b = x - this.resultproduct
+                console.log('b'+b);//-250
+                var tax = ((x * this.tax) / 100);//1732.5
+                var z = x + tax
+                console.log('z'+z)
+                this.totalproduct = tax+b ;
+                this.paidproduct = z;
                 
 
             }
 
             if (this.discountper <= 0) {
-                this.paidproduct = this.resultproduct - ((this.resultproduct * this.tax) / 100)
+                this.paidproduct = this.resultproduct + ((this.resultproduct * this.tax) / 100)
             }
         }
     },
